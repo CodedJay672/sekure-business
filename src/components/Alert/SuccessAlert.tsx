@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { RiCheckboxCircleFill, RiCloseLine } from "react-icons/ri";
-import Button from "../ui/Button";
+import Button from "../ui/shared/Button";
 
 const SuccessAlert = ({ text }: { text: string }) => {
   const [show, setShow] = useState<Boolean>(true);

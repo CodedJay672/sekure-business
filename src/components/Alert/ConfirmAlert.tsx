@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { RiCloseLine } from "react-icons/ri";
-import Button from "../ui/Button";
+import Button from "../ui/shared/Button";
 
 interface IConfirmAlert {
   heading: string;
@@ -32,8 +32,8 @@ const ConfirmAlert = ({heading, content, btnText}: IConfirmAlert) => {
         <p className="font-normal text-[10px] text-notif leading-[15px]">{content}</p>
       </div>
       <div className="w-full flex-between">
-        <Button type="primary" text={btnText} />
-        <Button type="secondary" text={"Annuler"} />
+        <Button variant="primary" text={btnText} />
+        <Button variant="secondary" text={"Annuler"} />
       </div>
     </div>
   )}

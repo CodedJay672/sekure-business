@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Topbar from "@/components/Topbar/Topbar";
+import Sidebar from "@/components/Sidebar/Sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
+        <Topbar />
+        <main className="flex justify-start items-start min-h-screen pr-6">
+          <Sidebar />
+          {children}
+        </main>
       </body>
     </html>
   );
