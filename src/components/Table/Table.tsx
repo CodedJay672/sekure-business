@@ -25,16 +25,16 @@ const Table = () => {
     console.log(newTableData);
   }
 
-  // const handleSubmit = () => {
-  //   if (!search) {
-  //     return;
-  //   }
+  const handleSubmit = () => {
+    if (!search) {
+      return;
+    }
 
-  //   const newData = tableData.filter((data) => data.fromTo.includes(search));
+    const newData = tableData.filter((data) => data.fromTo.includes(search));
 
-  //   setNewTableData(newData);
-  //   console.log(newTableData);
-  // }
+    setNewTableData(newData);
+    console.log(newTableData);
+  }
 
   return (
     <section className="w-full bg-white p-4 flex flex-col gap-2">
@@ -46,6 +46,7 @@ const Table = () => {
         <SearchBar
           text={search}
           handleChange={handleChange}
+          handleSubmit={handleSubmit}
         />
         <Filter />
         <Pagination />

@@ -5,11 +5,11 @@ import { RiSearchLine } from "react-icons/ri";
 const SearchBar = ({
   text,
   handleChange,
-  // handleSubmit
+  handleSubmit
 }: {
   text: string;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  // handleSubmit: MouseEventHandler<HTMLImageElement>;
+  handleSubmit: MouseEventHandler<HTMLImageElement>;
 }) => {
   return (
     <div className="flex-1 flex-center relative">
@@ -27,7 +27,7 @@ const SearchBar = ({
         width={13}
         height={14}
         className="absolute top-2 right-4 mt-[2px] cursor-pointer"
-        // onClick={handleSubmit}
+        onClick={handleSubmit}
       />
     </div>
   )
