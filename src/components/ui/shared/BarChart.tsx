@@ -63,8 +63,9 @@ const BarChart = () => {
           font: {
             size: 8,
           },
-          callback: function(value: number) {
-            return value > 0 ? value + 'K' : value; // Remove the 'K' from the y-axis labels
+          callback: function(value: string | number) {
+            const numericValue = Number(value); // Convert the value to a number
+            return numericValue > 0 ? numericValue + 'K' : numericValue; // Remove the 'K' from the y-axis labels
           },
         },
       },
