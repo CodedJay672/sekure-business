@@ -43,6 +43,14 @@ const BarChart = () => {
   }
 
   const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    aspectRatio: 2,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
     scales: {
       x: {
         display: true,
@@ -73,7 +81,7 @@ const BarChart = () => {
   }
 
   return (
-    <div className='w-full'>
+    <div className='w-full h-[236.19px]'>
       <Bar data={data} height={100} options={options} />
     </div>
   )

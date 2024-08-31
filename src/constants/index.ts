@@ -25,22 +25,22 @@ export const navLinks: INavLinks[] = [
     icon: icon1,
   },
   {
-    path: "/Cartes",
+    path: "/cartes",
     name: 'Cartes',
     icon: icon2,
   },
   {
-    path: "/Transactions",
+    path: "/transactions",
     name: 'Transactions',
     icon: icon3,
   },
   {
-    path: "/Utilisateurs",
+    path: "/utilisateurs",
     name: 'Utilisateurs',
     icon: icon4,
   },
   {
-    path: "/Paramètres",
+    path: "/paramètres",
     name: 'Paramètres',
     icon: icon5,
   },

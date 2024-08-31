@@ -27,7 +27,7 @@ const Topbar = () => {
       </div>
       <div className="flex-1 flex items-center">
         <h1 className="font-semibold text-[24px] leading-[27px] tracking-[-1px] text-dark3">
-          {pathname === "/" ? "Accueil" : pathname.slice(1)}
+          {pathname === "/" ? "Accueil" : pathname.slice(1).charAt(0).toUpperCase() + pathname.slice(2)}
         </h1>
       </div>
       <div className="flex-between gap-2">
