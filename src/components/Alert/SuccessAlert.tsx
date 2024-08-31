@@ -22,7 +22,7 @@ const SuccessAlert = ({ text }: { text: string }) => {
           />
         <RiCheckboxCircleFill color="#18BC7A" size={34.66} className="fill-primary" />
         <p className="font-semibold text-base leading-[19px] text-center">{text}</p>
-        <Button type="secondary" text="ok" />
+        <Button variant="secondary" text="ok" />
       </div>
     )}
     </>
