@@ -17,7 +17,6 @@ import { cardCreateSchema } from "../../validation";
 import ButtonIconRight from "../ui/shared/ButtonIconRight";
 import { ArrowRightIcon } from "lucide-react";
 import { Input } from "../ui/input";
-import Currency from "../ui/shared/Currency";
 import DetailsTag from "../ui/shared/DetailsTag";
 
 
@@ -56,10 +55,6 @@ const CreateCardForm = ({ btnText}: { btnText: string }) => {
           )}
         />
 
-        <div className="mb-44 flex gap-2">
-          <DetailsTag data={{ key: 'Montant debité', value: '51 500 XAF' }} />
-        </div>
-
         <FormField
           control={form.control}
           name="email"
@@ -77,6 +72,10 @@ const CreateCardForm = ({ btnText}: { btnText: string }) => {
             </FormItem>
           )}
         />
+
+        <div className="mb-44 flex gap-2">
+          <DetailsTag data={{ key: 'Montant debité', value: '51 500 XAF' }} />
+        </div>
 
         <ButtonIconRight
           variant="primary"

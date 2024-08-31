@@ -1,12 +1,29 @@
+"use client";
+
+import { useState } from "react"
 import AdminChart from "@/components/AdminChart/AdminChart"
 import Card from "@/components/Cards/Cards"
 import StatsCard from "@/components/StatsCard/StatsCard"
+import ButtonIconRight from "@/components/ui/shared/ButtonIconRight"
 import { cardDetails } from "@/constants"
 import { Table } from "lucide-react"
+import { RiAddCircleFill } from "react-icons/ri"
+import CreateCardForm from "@/components/Forms/CreateCardForm"
+import Modal from "@/components/Modal/Modal"
+import Form from "@/components/ui/shared/Form";
 
 const page = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClick = () => {
+    setShowModal(true);
+  }
+
   return (
-    <section className="flex-1 flex gap-4 ml-4 pb-10">
+    <section className="flex-1 flex gap-4 ml-4 pb-10 relative">
+      {showModal ? 
+      <Modal ui={<Form heading="Créer une carte" form ={<CreateCardForm btnText="Créer" />} />} /> :
+      <>
       <div className="flex-1 flex flex-col gap-4">
         <section className="flex gap-2">
           <Card key={0} {...cardDetails[0]} />
@@ -27,7 +44,18 @@ const page = () => {
         <div className="w-full py-3 px-[14px] bg-white overflow-hidden rounded-[10px]">
           <StatsCard entry={[20,80]} />
         </div>
+        <div className="w-full bg-white rounded-[10px] px-[14px] py-3">
+          <ButtonIconRight
+            text="Créer une carte"
+            icon={<RiAddCircleFill size={18} className="fill-white"/>}
+            variant="primary"
+            type="button"
+            handleClick={handleClick}
+          />
+        </div>
       </div>
+      </>
+      }
     </section>
   )
 }
