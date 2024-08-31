@@ -4,7 +4,7 @@ import BarChart from "../ui/shared/BarChart"
 
 const AdminChart = ({ variant }: { variant?: 'detailed' | 'simple' }) => {
   return (
-    <div className="max-w-[846px] bg-white px-4 py-2">
+    <div className="w-full bg-white px-4 py-2">
       <div className="flex-between">
         <div className="flex-1 flex flex-col gap-1">
           <h2 className="text-base leading-5 text-dark3 font-semibold">{`${variant !== 'detailed' ? 'Évolution des cartes crées' : `Évolution des transactions effectuées`}`}</h2>
