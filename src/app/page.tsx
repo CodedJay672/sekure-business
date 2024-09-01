@@ -6,21 +6,21 @@ import { cardDetails } from "@/constants";
 
 export default function Home() {
   return (
-    <section className="w-full flex-1 flex gap-4 ml-4 pb-10">
+    <section className="w-full flex justify-between gap-4 pr-6 ml-3 pb-10">
       <div className="flex-1 flex flex-col gap-4">  
-        <section className="flex gap-2">
+        <section className="flex-between gap-2">
           {cardDetails.map((card, idx) => (
             <Card key={idx} {...card} />
           ))}
         </section>
-        <section className="flex flex-col gap-4">
+        <section className="w-full">
           <AdminChart variant="detailed" />
         </section>
         <section className="w-full">
           <Table />
         </section>
       </div>
-      <section className="flex flex-col max-w-[354px] gap-3">
+      <section className="flex flex-col max-w-[354px] w-[300px] gap-3">
         <Wallet type="XAF" deposit="125 200.50" withdraw="125 200.50" />
         <Wallet type="USD" deposit="125 200.50" withdraw="125 200.50" />
         <Wallet type="IVC" deposit="125 200.50" withdraw="125 200.50" />

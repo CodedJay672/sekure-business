@@ -23,7 +23,7 @@
   }
 
   body {
-    @apply  bg-notif text-dark3;
+    @apply  max-w-[1497px] bg-notif text-dark3 mx-auto overflow-x-hidden;
   }
 }
 

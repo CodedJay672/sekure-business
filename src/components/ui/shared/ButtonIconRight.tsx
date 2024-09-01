@@ -5,7 +5,7 @@ interface IButtonIconRight {
   text: string;
   icon: ReactNode;
   type?: 'button' | 'submit' | 'reset';
-  handleClick: () => void;
+  handleClick: any;
 }
 
 const ButtonIconRight = ({ variant, text, icon, type, handleClick }: IButtonIconRight) => {

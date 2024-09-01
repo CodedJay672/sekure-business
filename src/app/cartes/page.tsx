@@ -6,11 +6,11 @@ import Card from "@/components/Cards/Cards"
 import StatsCard from "@/components/StatsCard/StatsCard"
 import ButtonIconRight from "@/components/ui/shared/ButtonIconRight"
 import { cardDetails } from "@/constants"
-import { Table } from "lucide-react"
 import { RiAddCircleFill } from "react-icons/ri"
 import CreateCardForm from "@/components/Forms/CreateCardForm"
 import Modal from "@/components/Modal/Modal"
 import Form from "@/components/ui/shared/Form";
+import Table from "@/components/Table/Table";
 
 const page = () => {
   const [showModal, setShowModal] = useState(false);
@@ -20,7 +20,7 @@ const page = () => {
   }
 
   return (
-    <section className="flex-1 flex gap-4 ml-4 pb-10 relative">
+    <section className="w-full flex gap-4 ml-4 pb-10 relative pr-6">
       {showModal ? 
       <Modal ui={<Form heading="Créer une carte" form ={<CreateCardForm btnText="Créer" />} />} /> :
       <>
