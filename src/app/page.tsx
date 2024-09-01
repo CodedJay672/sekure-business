@@ -17,7 +17,7 @@ export default function Home() {
           <AdminChart variant="detailed" />
         </section>
         <section className="w-full">
-          <Table variant='big' columns={bigTable} data={data}/>
+          <Table heading="Dernieres transactions" variant='big' columns={bigTable} data={data}/>
         </section>
       </div>
       <section className="flex flex-col max-w-[354px] w-[300px] gap-3">

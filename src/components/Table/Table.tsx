@@ -16,9 +16,10 @@ interface TableProps {
   variant?: 'big' | 'small';
   columns: Column[];
   data: Data[];
+  heading?: string;
 }
 
-const Table: React.FC<TableProps> = ({ variant, columns, data }) => {
+const Table: React.FC<TableProps> = ({ heading, variant, columns, data }) => {
   const [search, setSearch] = useState<string>("");
   const [tableData, setTableData] = useState(data);
   const [newTableData, setNewTableData] = useState([]);
@@ -38,7 +39,7 @@ const Table: React.FC<TableProps> = ({ variant, columns, data }) => {
       {variant === 'big' ? (
         <>
         <div className="w-full">
-          <h2 className="text-base leading-6 font-semibold">Dernieres transactions</h2>
+          <h2 className="text-base leading-6 font-semibold">{heading}</h2>
           <p className="text-xs leading-4 font-light">liste en temps réel des dernieres transactions effectuées avec les cartes</p>
         </div>
         <div className="w-full flex gap-1">

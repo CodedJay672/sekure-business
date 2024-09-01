@@ -33,7 +33,7 @@ const Cartes = () => {
           <AdminChart variant="simple" />
         </section>
         <section className="w-full">
-          <Table variant="big" columns={bigTable} data={data} />
+          <Table heading="Liste de Cartes délivrées" variant="big" columns={bigTable} data={data} />
         </section>
       </div>
       <div className="min-w-[300px] flex flex-col gap-[13px]">

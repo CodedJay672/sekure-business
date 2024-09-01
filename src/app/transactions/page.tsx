@@ -19,7 +19,12 @@ const Transactions = () => {
           <AdminChart variant='simple' />
         </section>
         <section className='w-full'>
-          <Table variant='big' columns={bigTable} data={data} />
+          <Table
+            heading='Liste de Transactions effectuées'
+            variant='big'
+            columns={bigTable}
+            data={data}
+          />
         </section>
       </div>
       <div className='max-w-[300px] flex flex-col gap-[13px]'>
