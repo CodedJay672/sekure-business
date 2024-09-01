@@ -2,7 +2,7 @@ import AdminChart from "@/components/AdminChart/AdminChart";
 import Card from "@/components/Cards/Cards";
 import Table from "@/components/Table/Table";
 import Wallet from "@/components/Wallet/Wallet";
-import { cardDetails } from "@/constants";
+import { bigTable, cardDetails, data } from "@/constants";
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
           <AdminChart variant="detailed" />
         </section>
         <section className="w-full">
-          <Table />
+          <Table variant='big' columns={bigTable} data={data}/>
         </section>
       </div>
       <section className="flex flex-col max-w-[354px] w-[300px] gap-3">

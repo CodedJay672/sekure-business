@@ -49,8 +49,16 @@ const Wallet = ({ type, deposit, withdraw }: IWalletDetails) => {
       </div>
 
       <div className="flex-between flex-1 gap-2">
-        <ButtonIconRight type="submit" variant="primary" text="Recharger" icon={<Image src="/assets/images/forward.png" alt="deposit" width={24} height={24} className="object-contain" />} />
-        <ButtonIconRight text="Recharger" icon={<Image src="/assets/images/reset.png" alt="deposit" width={24} height={24} className="object-contain" />} />
+        <ButtonIconRight
+          type="submit"
+          variant="primary" 
+          text="Recharger"
+          icon={<Image src="/assets/images/forward.png" alt="deposit" width={24} height={24} className="object-contain" />}
+        />
+        <ButtonIconRight
+          text="Recharger"
+          icon={<Image src="/assets/images/reset.png" alt="deposit" width={24} height={24} className="object-contain" />}
+        />
       </div>
     </article>
   )

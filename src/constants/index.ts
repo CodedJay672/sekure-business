@@ -106,83 +106,127 @@ export const cardDetails: ICardDetails[] = [
   },
 ]
 
-export interface ITableData {
-  no: string;
-  type: string;
-  fromTo: string;
-  amount: string;
-  state: string;
-  nbPm: string;
-  echecPm: string;
-  totalPm: string;
-  moyPm: string;
+interface ITableColumn {
+  id: string;
+  header: string;
 }
 
-export const tableRowData: ITableData[] = [
+export const bigTable: ITableColumn[] = [
+  { id: 'no', header: 'No' },
+  { id: 'type', header: 'Type' },
+  { id: 'Deà', header: 'De / à' },
+  { id: 'montant', header: 'Montant' },
+  { id: 'date', header: 'Date' },
+  { id: 'etat', header: 'Etat' },
+  { id: 'NbPm', header: 'Nb PM' },
+  { id: 'EchecPm', header: 'Echec PM' },
+  { id: 'TotalPm', header: 'Total PM' },
+  { id: 'MoyPm', header: 'Moy PM' },
+]
+
+export const smallTable: ITableColumn[] = [
+  { id: 'type', header: 'Type' },
+  { id: 'Deà', header: 'De / à' },
+  { id: 'montant', header: 'Montant' },
+  { id: 'date', header: 'Date' },
+]
+
+export interface Data {
+  [key: string]: string | number;
+}
+
+export const data: Data[] = [
   {
     no: "1",
-    type: "Virement",
-    fromTo: "XAA 125 200.50",
-    amount: "125 200.50",
-    state: "Succes",
-    nbPm: "5",
-    echecPm: "0",
-    totalPm: "5",
-    moyPm: "25 000.50",
+    type: "V",
+    Deà: "XAA 125 200.50",
+    montant: "125 200.50",
+    date: "Talla oyono Richnel",
+    etat: "$5000",
+    Nbpm: "2354",
+    Echecpm: "87",
+    TotalPm: "$5000",
+    MoyPm: "$450/sem",
   },
   {
-    no: "2",
-    type: "Virement",
-    fromTo: "XAB 125 200.50",
-    amount: "125 200.50",
-    state: "Succes",
-    nbPm: "5",
-    echecPm: "0",
-    totalPm: "5",
-    moyPm: "25 000.50",
+    no: "1",
+    type: "V",
+    Deà: "XAA 125 200.50",
+    montant: "125 200.50",
+    date: "Talla oyono Richnel",
+    etat: "$5000",
+    Nbpm: "2354",
+    Echecpm: "87",
+    TotalPm: "$5000",
+    MoyPm: "$450/sem",
   },
   {
-    no: "3",
-    type: "Virement",
-    fromTo: "XAC 125 200.50",
-    amount: "125 200.50",
-    state: "Succes",
-    nbPm: "5",
-    echecPm: "0",
-    totalPm: "5",
-    moyPm: "25 000.50",
+    no: "1",
+    type: "V",
+    Deà: "XAA 125 200.50",
+    montant: "125 200.50",
+    date: "Talla oyono Richnel",
+    etat: "$5000",
+    Nbpm: "2354",
+    Echecpm: "87",
+    TotalPm: "$5000",
+    MoyPm: "$450/sem",
   },
   {
-    no: "4",
-    type: "Virement",
-    fromTo: "XAD 125 200.50",
-    amount: "125 200.50",
-    state: "Succes",
-    nbPm: "5",
-    echecPm: "0",
-    totalPm: "5",
-    moyPm: "25 000.50",
+    no: "1",
+    type: "V",
+    Deà: "XAA 125 200.50",
+    montant: "125 200.50",
+    date: "Talla oyono Richnel",
+    etat: "$5000",
+    Nbpm: "2354",
+    Echecpm: "87",
+    TotalPm: "$5000",
+    MoyPm: "$450/sem",
   },
   {
-    no: "5",
-    type: "Virement",
-    fromTo: "XAF 125 200.50",
-    amount: "125 200.50",
-    state: "Succes",
-    nbPm: "5",
-    echecPm: "0",
-    totalPm: "5",
-    moyPm: "25 000.50",
+    no: "1",
+    type: "V",
+    Deà: "XAA 125 200.50",
+    montant: "125 200.50",
+    date: "Talla oyono Richnel",
+    etat: "$5000",
+    Nbpm: "2354",
+    Echecpm: "87",
+    TotalPm: "$5000",
+    MoyPm: "$450/sem",
   },
   {
-    no: "6",
-    type: "Virement",
-    fromTo: "XAF 125 200.50",
-    amount: "125 200.50",
-    state: "Succes",
-    nbPm: "5",
-    echecPm: "0",
-    totalPm: "5",
-    moyPm: "25 000.50",
+    no: "1",
+    type: "V",
+    Deà: "XAA 125 200.50",
+    montant: "125 200.50",
+    date: "Talla oyono Richnel",
+    etat: "$5000",
+    Nbpm: "2354",
+    Echecpm: "87",
+    TotalPm: "$5000",
+    MoyPm: "$450/sem",
   },
-]
+];
+
+export const smallData: Data[] = [
+  {
+    type: "V",
+    Deà: "XAA 125 200.50",
+    montant: "125 200.50",
+    date: "Talla oyono Richnel",
+  },
+  {
+    type: "V",
+    Deà: "XAA 125 200.50",
+    montant: "125 200.50",
+    date: "Talla oyono Richnel",
+  },
+  {
+    type: "V",
+    Deà: "XAA 125 200.50",
+    montant: "125 200.50",
+    date: "Talla oyono Richnel",
+  },
+];

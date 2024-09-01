@@ -5,7 +5,7 @@ import AdminChart from "@/components/AdminChart/AdminChart"
 import Card from "@/components/Cards/Cards"
 import StatsCard from "@/components/StatsCard/StatsCard"
 import ButtonIconRight from "@/components/ui/shared/ButtonIconRight"
-import { cardDetails } from "@/constants"
+import { bigTable, cardDetails, data } from "@/constants"
 import { RiAddCircleFill } from "react-icons/ri"
 import CreateCardForm from "@/components/Forms/CreateCardForm"
 import Modal from "@/components/Modal/Modal"
@@ -20,7 +20,7 @@ const Cartes = () => {
   }
 
   return (
-    <section className="w-full flex gap-4 ml-4 pb-10 relative pr-6">
+    <section className="wrapper relative">
       {showModal ? 
       <Modal ui={<Form heading="Créer une carte" form ={<CreateCardForm btnText="Créer" />} />} /> :
       <>
@@ -33,7 +33,7 @@ const Cartes = () => {
           <AdminChart variant="simple" />
         </section>
         <section className="w-full">
-          <Table />
+          <Table variant="big" columns={bigTable} data={data} />
         </section>
       </div>
       <div className="min-w-[300px] flex flex-col gap-[13px]">
@@ -50,7 +50,6 @@ const Cartes = () => {
             icon={<RiAddCircleFill size={18} className="fill-white"/>}
             variant="primary"
             type="button"
-            handleClick={handleClick}
           />
         </div>
       </div>
