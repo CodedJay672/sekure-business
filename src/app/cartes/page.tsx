@@ -12,7 +12,7 @@ import Modal from "@/components/Modal/Modal"
 import Form from "@/components/ui/shared/Form";
 import Table from "@/components/Table/Table";
 
-const page = () => {
+const Cartes = () => {
   const [showModal, setShowModal] = useState(false);
 
   const handleClick = () => {
@@ -60,4 +60,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Cartes;
