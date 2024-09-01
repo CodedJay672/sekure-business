@@ -86,6 +86,7 @@ const RechargeCardForm = ({ btnText}: { btnText: string }) => {
           type="submit"
           text={btnText}
           icon={<ArrowRightIcon size={10} color="#fff" />}
+          handleClick={onSubmit}
         />
       </form>
     </Form>
