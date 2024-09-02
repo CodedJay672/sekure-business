@@ -53,9 +53,9 @@ const Wallet = ({ type, deposit, withdraw }: IWalletDetails) => {
         <Button
           type="submit"
           variant="default"
-          className="primary-btn flex-1"
+          className="primary-btn flex-1 flex-between w-[154px] px-2"
         >
-          <span className="flex-1">
+          <span className="text-[12px] leading-[34.5px] tracking-[-0.5%] flex-1 text-center">
             Recharger
           </span>
           <Image
@@ -69,11 +69,18 @@ const Wallet = ({ type, deposit, withdraw }: IWalletDetails) => {
         <Button
           variant="default"
           type="button"
-          className="bg-dark3 text-white flex-1"
+          className="bg-dark3 text-white flex-1 flex-between w-[154px] px-2"
         >
-          <span className="flex-1">
-            Recharger
+          <span className="text-[12px] leading-[34.5px] tracking-[-0.5%] flex-1">
+            Convertir
           </span>
+          <Image
+            src="/assets/images/reset.png"
+            alt="deposit"
+            width={24}
+            height={24}
+            className="object-contain"
+          />
         </Button>
       </div>
     </article>

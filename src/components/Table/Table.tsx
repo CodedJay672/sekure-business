@@ -5,6 +5,9 @@ import SearchBar from "../ui/shared/SearchBar"
 import Filter from "../ui/shared/Filter";
 import Pagination from "../ui/shared/Pagination";
 import { Data } from "@/constants";
+import { useRouter } from "next/navigation";
+import { Button } from "../ui/button";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 interface Column {
   id: string;
@@ -21,6 +24,7 @@ interface TableProps {
 
 const Table: React.FC<TableProps> = ({ heading, variant, columns, data }) => {
   const [search, setSearch] = useState<string>("");
+  const router = useRouter();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
@@ -32,8 +36,13 @@ const Table: React.FC<TableProps> = ({ heading, variant, columns, data }) => {
     }
   }
 
+  
+  const handleMenuClick = (id: string | number) => {
+    router.push(`/details/${id}`);
+  };
+
   return (
-    <section className="bg-white p-4 flex flex-col gap-2">
+    <section className={`bg-white ${variant === 'big' && 'p-4'} flex flex-col gap-2`}>
       {variant === 'big' ? (
         <>
         <div className="w-full">
@@ -63,6 +72,7 @@ const Table: React.FC<TableProps> = ({ heading, variant, columns, data }) => {
                 {column.header}
               </th>
             ))}
+            <th scope="col" className="px-2 py-2"></th>
           </tr>
           </thead>
           <tbody>
@@ -73,6 +83,13 @@ const Table: React.FC<TableProps> = ({ heading, variant, columns, data }) => {
                     {row[column.accessor || column.id] ?? ''}
                   </td>
                 ))}
+                <td className="px-2 py-6">
+                  <BsThreeDotsVertical
+                    size={14} 
+                    onClick={() => handleMenuClick(row.id)}
+                    className="cursor-pointer"
+                  />
+                </td>
               </tr>
             ))}
           </tbody>

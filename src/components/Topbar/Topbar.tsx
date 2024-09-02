@@ -10,7 +10,7 @@ const Topbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="flex-between w-full py-3 px-6 gap-4">
+    <nav className="flex-between w-full py-3 px-6 gap-4 relative">
       <div className="flex-center">
         <div className="mr-1">
           <Image
