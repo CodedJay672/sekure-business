@@ -1,4 +1,4 @@
-import { ICardDetails } from "@/constants";
+import { ICardDetails } from "@/constants/types";
 
 const Card = ({ data1, data2, data3 }: ICardDetails) => {
   return (
