@@ -14,11 +14,11 @@ import {
 } from "@/components/ui/form"
 
 import { rechargeWalletSchema } from "../../validation";
-import ButtonIconRight from "../ui/shared/ButtonIconRight";
 import { ArrowRightIcon } from "lucide-react";
 import { Input } from "../ui/input";
 import Currency from "../ui/shared/Currency";
 import DetailsTag from "../ui/shared/DetailsTag";
+import { Button } from "../ui/button";
 
 
 const RechargeWalletForm = ({ btnText}: { btnText: string }) => {
@@ -79,12 +79,10 @@ const RechargeWalletForm = ({ btnText}: { btnText: string }) => {
           )}
         />
 
-        <ButtonIconRight
-          variant="primary"
-          type="submit"
-          text={btnText}
-          icon={<ArrowRightIcon size={10} color="#fff" />}
-        />
+        <Button variant="outline" type="submit" className="primary-btn">
+          {btnText} 
+          <ArrowRightIcon size={10} color="#fff" />
+        </Button>
       </form>
     </Form>
   )

@@ -118,8 +118,8 @@ export const bigTable: ITableColumn[] = [
   { id: 'montant', header: 'Montant' },
   { id: 'date', header: 'Date' },
   { id: 'etat', header: 'Etat' },
-  { id: 'NbPm', header: 'Nb PM' },
-  { id: 'EchecPm', header: 'Echec PM' },
+  { id: 'Nbpm', header: 'Nb PM' },
+  { id: 'Echecpm', header: 'Echec PM' },
   { id: 'TotalPm', header: 'Total PM' },
   { id: 'MoyPm', header: 'Moy PM' },
 ]

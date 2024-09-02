@@ -21,8 +21,6 @@ interface TableProps {
 
 const Table: React.FC<TableProps> = ({ heading, variant, columns, data }) => {
   const [search, setSearch] = useState<string>("");
-  const [tableData, setTableData] = useState(data);
-  const [newTableData, setNewTableData] = useState([]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);

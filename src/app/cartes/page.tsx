@@ -4,13 +4,13 @@ import { useState } from "react"
 import AdminChart from "@/components/AdminChart/AdminChart"
 import Card from "@/components/Cards/Cards"
 import StatsCard from "@/components/StatsCard/StatsCard"
-import ButtonIconRight from "@/components/ui/shared/ButtonIconRight"
 import { bigTable, cardDetails, data } from "@/constants"
 import { RiAddCircleFill } from "react-icons/ri"
 import CreateCardForm from "@/components/Forms/CreateCardForm"
 import Modal from "@/components/Modal/Modal"
 import Form from "@/components/ui/shared/Form";
 import Table from "@/components/Table/Table";
+import { Button } from "@/components/ui/button";
 
 const Cartes = () => {
   const [showModal, setShowModal] = useState(false);
@@ -45,12 +45,17 @@ const Cartes = () => {
           <StatsCard entry={[20,80]} />
         </div>
         <div className="w-full bg-white rounded-[10px] px-[14px] py-3">
-          <ButtonIconRight
-            text="Créer une carte"
-            icon={<RiAddCircleFill size={18} className="fill-white"/>}
-            variant="primary"
+          <Button
             type="button"
-          />
+            variant="default"
+            onClick={handleClick}
+            className="primary-btn w-full flex-between"
+          >
+            <span className="flex-1 text-center">
+              Créer une carte
+            </span>
+            <RiAddCircleFill size={18} className="fill-white" />
+          </Button>
         </div>
       </div>
       </>

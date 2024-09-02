@@ -7,7 +7,7 @@ const Filter = () => {
       alt="filter"
       width={89}
       height={32}
-      className="object-cover cursor-pointer mx-3"
+      className="w-auto h-auto object-cover cursor-pointer mx-3"
     />
   )
 }

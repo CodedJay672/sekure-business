@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { RiCheckboxCircleFill, RiCloseLine } from "react-icons/ri";
-import Button from "../ui/shared/Button";
+import { Button } from "../ui/button";
 
 const SuccessAlert = ({ text }: { text: string }) => {
   const [show, setShow] = useState<Boolean>(true);
@@ -22,7 +22,7 @@ const SuccessAlert = ({ text }: { text: string }) => {
           />
         <RiCheckboxCircleFill color="#18BC7A" size={34.66} className="fill-primary" />
         <p className="font-semibold text-base leading-[19px] text-center">{text}</p>
-        <Button variant="secondary" text="ok" />
+        <Button variant="outline" type="button" className="primary-btn">Ok</Button>
       </div>
     )}
     </>

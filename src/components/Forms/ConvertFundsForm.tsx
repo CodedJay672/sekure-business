@@ -19,6 +19,7 @@ import { ArrowRightIcon } from "lucide-react";
 import { Input } from "../ui/input";
 import Currency from "../ui/shared/Currency";
 import DetailsTag from "../ui/shared/DetailsTag";
+import { Button } from "../ui/button";
 
 
 const ConvertFundsForm = ({ btnText}: { btnText: string }) => {
@@ -83,12 +84,10 @@ const ConvertFundsForm = ({ btnText}: { btnText: string }) => {
           <DetailsTag data={{ key: 'Montant debité', value: '51 500 XAF' }} />
         </div>
 
-        <ButtonIconRight
-          variant="primary"
-          type="submit"
-          text={btnText}
-          icon={<ArrowRightIcon size={10} color="#fff" />}
-        />
+        <Button variant="outline" type="submit" className="primary-btn">
+          {btnText} 
+          <ArrowRightIcon size={10} color="#fff" />
+        </Button>
       </form>
     </Form>
   )

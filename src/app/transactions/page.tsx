@@ -2,6 +2,7 @@ import AdminChart from '@/components/AdminChart/AdminChart';
 import Card from '@/components/Cards/Cards';
 import StatsCard from '@/components/StatsCard/StatsCard';
 import Table from '@/components/Table/Table';
+import { Button } from '@/components/ui/button';
 import ButtonIconRight from '@/components/ui/shared/ButtonIconRight';
 import { bigTable, cardDetails, data, smallData, smallTable } from '@/constants';
 import React from 'react'
@@ -38,18 +39,26 @@ const Transactions = () => {
           <StatsCard entry={[20, 80]} />
         </div>
         <div className='w-full bg-white rounded-[10px] px-[14px] py-3 flex-between gap-2'>
-          <ButtonIconRight
-            text='Recharger'
-            icon={<RiAddCircleFill size={24} className='fill-white' />}
+          <Button
+            variant='default'
+            type='button'
+            className='primary-btn flex-between '
+          >
+            <span className='flex-1 text-center'>
+              Recharger
+            </span>
+            <RiAddCircleFill size={24} className='fill-white' />
+          </Button>
+          <Button
             variant='secondary'
             type='button'
-          />
-          <ButtonIconRight
-            text='Recharger une carte'
-            icon={<RiAddCircleFill size={24} className='fill-white' />}
-            variant='secondary'
-            type='button'
-          />
+            className='bg-dark3 flex-between text-white text-pretty'
+          >
+            <span className='flex-1 text-center'>
+              Recharger une carte
+            </span>
+            <RiAddCircleFill size={24} className='fill-white' />
+          </Button>
         </div>
         <div className='w-full bg-white rounded-[10px] px-[14px] py-3'>
           <Table variant='small' columns={smallTable} data={smallData} />

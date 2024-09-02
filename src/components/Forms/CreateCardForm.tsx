@@ -14,10 +14,10 @@ import {
 } from "@/components/ui/form"
 
 import { cardCreateSchema } from "../../validation";
-import ButtonIconRight from "../ui/shared/ButtonIconRight";
 import { ArrowRightIcon } from "lucide-react";
 import { Input } from "../ui/input";
 import DetailsTag from "../ui/shared/DetailsTag";
+import { Button } from "../ui/button";
 
 
 const CreateCardForm = ({ btnText}: { btnText: string }) => {
@@ -44,8 +44,8 @@ const CreateCardForm = ({ btnText}: { btnText: string }) => {
                 <div className="w-full rounded-[7px]">
                   <Input
                     placeholder="VISA 1"
-                    {...field}
                     className="input w-full bg-notif"
+                    {...field}
                   />
                   <span className="text-[8px] font-normal leading-6 text-placeholder-text">Ideake pour les paiements sur Alibab et Netflix, taux du dollars à 685 Fcfa</span>
                 </div>
@@ -64,8 +64,8 @@ const CreateCardForm = ({ btnText}: { btnText: string }) => {
               <FormControl className="flex-between w-full bg-notif pr-3 rounded-[7px]">
                 <Input
                   placeholder="user@mail.com"
-                  {...field}
                   className="input bg-notif w-full"
+                  {...field}
                 />
               </FormControl>
               <FormMessage className="text-xs font-normal leading-6 text-red-700" />
@@ -77,13 +77,12 @@ const CreateCardForm = ({ btnText}: { btnText: string }) => {
           <DetailsTag data={{ key: 'Montant debité', value: '51 500 XAF' }} />
         </div>
 
-        <ButtonIconRight
-          variant="primary"
-          type="submit"
-          text={btnText}
-          icon={<ArrowRightIcon size={10} color="#fff" />}
-          handleClick={onSubmit}
-        />
+        <Button variant="default" type="submit" className="primary-btn flex-between w-full">
+          <span className="flex-1 text-center">
+            {btnText} 
+          </span>
+          <ArrowRightIcon size={16} color="#fff" />
+        </Button>
       </form>
     </Form>
   )

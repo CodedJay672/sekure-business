@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ButtonIconRight from "../ui/shared/ButtonIconRight";
+import { Button } from "../ui/button";
 
 interface IWalletDetails {
   type: string;
@@ -48,17 +49,32 @@ const Wallet = ({ type, deposit, withdraw }: IWalletDetails) => {
         </div>
       </div>
 
-      <div className="flex-between flex-1 gap-2">
-        <ButtonIconRight
+      <div className="flex-between w-full gap-1">
+        <Button
           type="submit"
-          variant="primary" 
-          text="Recharger"
-          icon={<Image src="/assets/images/forward.png" alt="deposit" width={24} height={24} className="object-contain" />}
-        />
-        <ButtonIconRight
-          text="Recharger"
-          icon={<Image src="/assets/images/reset.png" alt="deposit" width={24} height={24} className="object-contain" />}
-        />
+          variant="default"
+          className="primary-btn flex-1"
+        >
+          <span className="flex-1">
+            Recharger
+          </span>
+          <Image
+            src="/assets/images/forward.png"
+            alt="deposit"
+            width={24}
+            height={24}
+            className="object-contain"
+          />
+        </Button>
+        <Button
+          variant="default"
+          type="button"
+          className="bg-dark3 text-white flex-1"
+        >
+          <span className="flex-1">
+            Recharger
+          </span>
+        </Button>
       </div>
     </article>
   )

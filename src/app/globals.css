@@ -43,7 +43,7 @@
 
 @layer components {
   .btn {
-    @apply flex-center rounded-lg text-xs font-medium leading-[34.5px];
+    @apply rounded-lg text-xs font-medium leading-[34.5px];
   }
 
   .alert {
@@ -64,5 +64,13 @@
 
   .select {
     @apply w-[111px] border-none cursor-pointer rounded-full bg-primary-fade duration-300 ring-transparent focus:ring-transparent text-primary text-xs leading-3 tracking-[-0.5px] font-medium;
+  }
+
+  .primary-btn {
+    @apply bg-primary text-white btn;
+  }
+
+  .secondary-btn {
+    @apply bg-dark2 text-dark btn;
   }
 }
