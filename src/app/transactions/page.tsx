@@ -3,9 +3,10 @@ import Card from '@/components/Cards/Cards';
 import StatsCard from '@/components/StatsCard/StatsCard';
 import Table from '@/components/Table/Table';
 import { Button } from '@/components/ui/button';
-import ButtonIconRight from '@/components/ui/shared/ButtonIconRight';
 import { bigTable, cardDetails, data, smallData, smallTable } from '@/constants';
+import Image from 'next/image';
 import React from 'react'
+import { LuArrowRightToLine } from 'react-icons/lu';
 import { RiAddCircleFill } from 'react-icons/ri';
 
 const Transactions = () => {
@@ -38,11 +39,11 @@ const Transactions = () => {
         <div className='w-full py-3 px-[14px] bg-white overflow-hidden rounded-[10px]'>
           <StatsCard entry={[20, 80]} />
         </div>
-        <div className='w-full bg-white rounded-[10px] px-[14px] py-3 flex-between gap-2'>
+        <div className='w-full bg-white rounded-[10px] px-[14px] py-3 flex-between gap-1'>
           <Button
             variant='default'
             type='button'
-            className='primary-btn flex-between '
+            className='primary-btn flex-between flex-1 px-[3px]'
           >
             <span className='flex-1 text-center'>
               Recharger
@@ -52,12 +53,17 @@ const Transactions = () => {
           <Button
             variant='secondary'
             type='button'
-            className='bg-dark3 flex-between text-white text-pretty'
+            className='bg-dark3 flex-between text-white text-pretty flex-1 pr-[4px]'
           >
             <span className='flex-1 text-center'>
               Recharger une carte
             </span>
-            <RiAddCircleFill size={24} className='fill-white' />
+            <Image
+              src='/assets/images/forward.png'
+              alt='arrow-right'
+              width={21}
+              height={21}
+            />
           </Button>
         </div>
         <div className='w-full bg-white rounded-[10px] px-[14px] py-3'>

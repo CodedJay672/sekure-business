@@ -1,4 +1,3 @@
-import { StaticImageData } from "next/image";
 import {
   icon1,
   icon2,
@@ -11,12 +10,13 @@ import {
   icon9,
   icon10,
 } from "../../public/assets/images/import";
+import {
+  Data,
+  ICardDetails,
+  INavLinks,
+  ITableColumn,
+} from "./types";
 
-interface INavLinks {
-  path: string;
-  name: string;
-  icon: StaticImageData;
-}
 
 export const navLinks: INavLinks[] = [
   {
@@ -46,20 +46,23 @@ export const navLinks: INavLinks[] = [
   },
 ]
 
-export interface ICardDetails {
-  data1: {
-    title: string;
-    value: string;
+export const bottomNav: INavLinks[] = [
+  {
+    path: "/statut",
+    name: 'Statut check',
+    icon: icon1,
   },
-  data2: {
-    title: string;
-    value: string;
+  {
+    path: "/sekure",
+    name: 'Sekure dev',
+    icon: icon2,
   },
-  data3: {
-    title: string;
-    value: string;
+  {
+    path: "/webhook",
+    name: 'Webhook & API',
+    icon: icon3,
   },
-}
+]
 
 export const cardDetails: ICardDetails[] = [
   {
@@ -106,11 +109,6 @@ export const cardDetails: ICardDetails[] = [
   },
 ]
 
-interface ITableColumn {
-  id: string;
-  header: string;
-}
-
 export const bigTable: ITableColumn[] = [
   { id: 'no', header: 'No' },
   { id: 'type', header: 'Type' },
@@ -131,13 +129,10 @@ export const smallTable: ITableColumn[] = [
   { id: 'date', header: 'Date' },
 ]
 
-export interface Data {
-  [key: string]: string | number;
-}
 
 export const data: Data[] = [
   {
-    no: "1",
+    no: 1,
     type: "V",
     Deà: "XAA 125 200.50",
     montant: "125 200.50",
@@ -149,7 +144,7 @@ export const data: Data[] = [
     MoyPm: "$450/sem",
   },
   {
-    no: "1",
+    no: 2,
     type: "V",
     Deà: "XAA 125 200.50",
     montant: "125 200.50",
@@ -161,7 +156,7 @@ export const data: Data[] = [
     MoyPm: "$450/sem",
   },
   {
-    no: "1",
+    no: 3,
     type: "V",
     Deà: "XAA 125 200.50",
     montant: "125 200.50",
@@ -173,7 +168,7 @@ export const data: Data[] = [
     MoyPm: "$450/sem",
   },
   {
-    no: "1",
+    no: 4,
     type: "V",
     Deà: "XAA 125 200.50",
     montant: "125 200.50",
@@ -185,7 +180,7 @@ export const data: Data[] = [
     MoyPm: "$450/sem",
   },
   {
-    no: "1",
+    no: 5,
     type: "V",
     Deà: "XAA 125 200.50",
     montant: "125 200.50",
@@ -197,7 +192,7 @@ export const data: Data[] = [
     MoyPm: "$450/sem",
   },
   {
-    no: "1",
+    no: 6,
     type: "V",
     Deà: "XAA 125 200.50",
     montant: "125 200.50",
