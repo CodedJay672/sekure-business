@@ -4,6 +4,7 @@ import { Data } from "@/constants/types";
 import React from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 interface Column {
   id: string;
@@ -19,10 +20,11 @@ interface TableComponentProps {
 
 const TableComponent: React.FC<TableComponentProps> = ({ variant, columns, data }) => {
   const router = useRouter();
+  const pathname = usePathname();
 
   
   const handleMenuClick = (id: string | number) => {
-    router.push(`cartes/${id}`);
+    router.push(`${pathname}/${id}`);
   };
 
   return (

@@ -2,12 +2,8 @@ import AdminChart from '@/components/AdminChart/AdminChart';
 import Card from '@/components/Cards/Cards';
 import StatsCard from '@/components/StatsCard/StatsCard';
 import Table from '@/components/Table/Table';
-import { Button } from '@/components/ui/button';
 import { bigTable, cardDetails, data, smallData, smallTable } from '@/constants';
-import Image from 'next/image';
 import React from 'react'
-import { LuArrowRightToLine } from 'react-icons/lu';
-import { RiAddCircleFill } from 'react-icons/ri';
 
 const Transactions = () => {
   return (
