@@ -39,33 +39,7 @@ const Transactions = () => {
         <div className='w-full py-3 px-[14px] bg-white overflow-hidden rounded-[10px]'>
           <StatsCard entry={[20, 80]} />
         </div>
-        <div className='w-full bg-white rounded-[10px] px-[14px] py-3 flex-between gap-1'>
-          <Button
-            variant='default'
-            type='button'
-            className='primary-btn flex-between flex-1 px-[3px]'
-          >
-            <span className='flex-1 text-center'>
-              Recharger
-            </span>
-            <RiAddCircleFill size={24} className='fill-white' />
-          </Button>
-          <Button
-            variant='secondary'
-            type='button'
-            className='bg-dark3 flex-between text-white text-pretty flex-1 pr-[4px]'
-          >
-            <span className='flex-1 text-center'>
-              Recharger une carte
-            </span>
-            <Image
-              src='/assets/images/forward.png'
-              alt='arrow-right'
-              width={21}
-              height={21}
-            />
-          </Button>
-        </div>
+        
         <div className='w-full bg-white rounded-[10px] px-[14px] py-3'>
           <Table variant='small' columns={smallTable} data={smallData} />
         </div>
