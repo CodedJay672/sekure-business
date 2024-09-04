@@ -1,5 +1,6 @@
 import Card from "@/components/Cards/Cards";
 import { Button } from "@/components/ui/button";
+import Active from "@/components/ui/shared/Active";
 import CardNumber from "@/components/ui/shared/CardNumber";
 import SearchBar from "@/components/ui/shared/SearchBar";
 import TableComponent from "@/components/ui/shared/TableComponent";
@@ -15,14 +16,12 @@ const CardDetails = ({ params } : { params: { id: string } }) => {
   const card = data.find((data) => data.no === Number(id));
   
   return (
-    <section className="wrapper">
+    <section className="wrapper max-w-[720px] 2xl:max-w-full">
       <div className="max-w-[354px] flex flex-col gap-3 rounded-[10px]">
         <div className="bg-white flex flex-col py-6 px-4 rounded-[10px]">
           <div className="flex-between">
             <h1 className="text-base leading-5 font-semibold text-dark3 flex-1">Details de carte</h1>
-            <div className="w-[70px] h-[29px] rounded-[22px] bg-primary-fade flex-center">
-              <span className="text-primary text-xs leading-3 tracking-[-0.5%]">Active</span>
-            </div>
+            <Active />
           </div>
           <span className="flex-1 text-xs leading-4 text-placeholder-text">Créé le 05 Aout 2024</span>
           <VisaCard />
@@ -86,9 +85,7 @@ const CardDetails = ({ params } : { params: { id: string } }) => {
               <span className="text-xs leading-[34.5px] tracking-[-0.5px] text-center font-normal text-[#18BC7A]">Filtrer</span>
             </div>
           </div>
-          <div className="w-full max-w-[801px]">
-            <TableComponent variant="big" columns={bigTable} data={data} />
-          </div>
+          <TableComponent variant="big" columns={bigTable} data={data} />
         </div>
       </div>
     </section>

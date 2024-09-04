@@ -10,7 +10,7 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="min-w-[234px] min-h-dvh flex-between flex-col">
+    <nav className="min-w-[234px] min-h-[800px] flex-between flex-col">
       <div className="w-full">
         {navLinks.map((link, idx) => (
           <Link href={link.path} key={`${idx}-${link.name}`} className={`w-full h-9 px-6 mb-3 flex flex-start items-center hover:bg-white group ${pathname === link.path ? 'bg-white' : ''} transition-all`}>

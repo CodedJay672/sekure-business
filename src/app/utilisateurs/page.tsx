@@ -5,7 +5,7 @@ import React from 'react'
 
 const Utilisateurs = () => {
   return (
-    <section className='wrapper max-w-[856px]'>
+    <section className='wrapper max-w-[720px] 2xl:max-w-[1010px]'>
       <div className='flex-1 flex flex-col gap-4'>
         <section className='flex gap-2'>
           <Card key={0} {...cardDetails[0]} />

@@ -15,7 +15,7 @@ const CardNumber: React.FC<ICard> = ({ heading, number }) => {
       </div>
       <div className="w-full flex-between">
         <p className="text-xs leading-[34.5px] tracking-[-0.5%] font-medium">{number}</p>
-        <PiSubtractSquareDuotone size={20.4} className="cursor-pointer" />
+        <PiSubtractSquareDuotone size={20.4} className="cursor-pointer ml-7" />
       </div>
     </article>
   )
