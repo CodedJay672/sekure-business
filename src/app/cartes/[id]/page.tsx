@@ -17,7 +17,7 @@ const CardDetails = ({ params } : { params: { id: string } }) => {
   return (
     <section className="wrapper">
       <div className="max-w-[354px] flex flex-col gap-3 rounded-[10px]">
-        <div className="bg-white flex flex-col py-6 px-4 ">
+        <div className="bg-white flex flex-col py-6 px-4 rounded-[10px]">
           <div className="flex-between">
             <h1 className="text-base leading-5 font-semibold text-dark3 flex-1">Details de carte</h1>
             <div className="w-[70px] h-[29px] rounded-[22px] bg-primary-fade flex-center">
