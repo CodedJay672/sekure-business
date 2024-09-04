@@ -1,21 +1,27 @@
+"use client";
+
 import Image from "next/image";
-import { MouseEventHandler } from "react";
+import { ChangeEvent, useState } from "react";
 import { RiSearchLine } from "react-icons/ri";
 
-const SearchBar = ({
-  text,
-  handleChange,
-  handleSubmit
-}: {
-  text: string;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleSubmit: MouseEventHandler<HTMLImageElement>;
-}) => {
+const SearchBar = () => {
+  const [search, setSearch] = useState<string>("");
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  }
+
+  const handleSubmit = () => {
+    if (!search) {
+      return;
+    }
+  }
+
   return (
     <div className="flex-1 flex-center relative">
       <input
         type="text"
-        value={text}
+        value={search}
         onChange={handleChange}
         placeholder="Rechercher"
         className="w-full h-8 rounded-[5px] border-none outline-none px-10 pr-12 py-3 input bg-input"

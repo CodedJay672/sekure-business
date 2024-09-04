@@ -1,6 +1,4 @@
-"use client";
-
-import React, { ChangeEvent, useState } from "react";
+import React from "react";
 import SearchBar from "../ui/shared/SearchBar"
 import Filter from "../ui/shared/Filter";
 import Pagination from "../ui/shared/Pagination";
@@ -15,17 +13,6 @@ interface TableProps {
 }
 
 const Table: React.FC<TableProps> = ({ heading, variant, columns, data }) => {
-  const [search, setSearch] = useState<string>("");
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
-  }
-
-  const handleSubmit = () => {
-    if (!search) {
-      return;
-    }
-  }
   return (
     <section className={`bg-white ${variant === 'big' && 'p-4'} flex flex-col gap-2`}>
       {variant === 'big' ? (
@@ -35,11 +22,7 @@ const Table: React.FC<TableProps> = ({ heading, variant, columns, data }) => {
           <p className="text-xs leading-4 font-light">liste en temps réel des dernieres transactions effectuées avec les cartes</p>
         </div>
         <div className="w-full flex gap-1">
-          <SearchBar
-            text={search}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-            />
+          <SearchBar />
           <Filter />
           <Pagination />
         </div>

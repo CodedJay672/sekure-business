@@ -1,3 +1,5 @@
+"use client";
+
 import { Data } from "@/constants/types";
 import React from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
@@ -24,7 +26,7 @@ const TableComponent: React.FC<TableComponentProps> = ({ variant, columns, data 
   };
 
   return (
-    <div className={`overflow-x-auto ${variant === 'big' ? 'mt-4' : ''}`}>
+    <div className={`overflow-x-auto ${variant === 'big' ? 'mt-4' : ''} w-full max-w-[801px]`}>
       <table className="w-full text-[11px] text-left text-dark3 table-auto">
         <thead className="text-[11px] leading-[14.36px] text-white bg-dark rounded-[10px]">
         <tr>
