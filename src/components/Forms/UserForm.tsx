@@ -30,7 +30,7 @@ const UserForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-[791.86px] flex flex-wrap gap-4">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-[791.86px] flex flex-wrap gap-5">
         <FormField
           control={form.control}
           name="firstName"
@@ -41,7 +41,7 @@ const UserForm = () => {
                 <Input
                   placeholder="Kamgaing Kamdem"
                   {...field}
-                  className="input pr-20 bg-notif"
+                  className="input pr-20 bg-notif w-[382px]"
                 />
               </FormControl>
               <FormMessage className="text-xs font-normal leading-6 text-red-700" />
@@ -59,7 +59,7 @@ const UserForm = () => {
                 <Input
                   placeholder="Steve"
                   {...field}
-                  className="input pr-20 bg-notif"
+                  className="input pr-20 bg-notif w-[382px]"
                 />
               </FormControl>
               <FormMessage className="text-xs font-normal leading-6 text-red-700" />
@@ -77,7 +77,7 @@ const UserForm = () => {
                 <Input
                   placeholder="kaamsteve@gmail.com"
                   {...field}
-                  className="input pr-20 bg-notif"
+                  className="input pr-20 bg-notif w-[382px]"
                 />
               </FormControl>
               <FormMessage className="text-xs font-normal leading-6 text-red-700" />

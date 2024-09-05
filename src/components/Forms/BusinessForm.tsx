@@ -15,6 +15,7 @@ import {
 
 import { businessNameSchema } from "../../validation";
 import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
 
 const BusinessForm = () => {
   const form = useForm<z.infer<typeof businessNameSchema>>({
@@ -30,7 +31,7 @@ const BusinessForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-[791.86px] flex flex-wrap gap-4">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-[791.86px] flex flex-wrap gap-5">
         <FormField
           control={form.control}
           name="name"
@@ -40,8 +41,8 @@ const BusinessForm = () => {
               <FormControl>
                 <Input
                   placeholder="Kamgaing Kamdem"
+                  className="input pr-20 bg-notif w-[382px]"
                   {...field}
-                  className="input pr-20 bg-notif"
                 />
               </FormControl>
               <FormMessage className="text-xs font-normal leading-6 text-red-700" />
@@ -59,7 +60,7 @@ const BusinessForm = () => {
                 <Input
                   placeholder="Steve"
                   {...field}
-                  className="input pr-20 bg-notif"
+                  className="input pr-20 bg-notif w-[382px]"
                 />
               </FormControl>
               <FormMessage className="text-xs font-normal leading-6 text-red-700" />
@@ -77,7 +78,7 @@ const BusinessForm = () => {
                 <Input
                   placeholder="kaamsteve@gmail.com"
                   {...field}
-                  className="input pr-20 bg-notif"
+                  className="input pr-20 bg-notif w-[382px]"
                 />
               </FormControl>
               <FormMessage className="text-xs font-normal leading-6 text-red-700" />
@@ -95,7 +96,7 @@ const BusinessForm = () => {
                 <Input
                   placeholder="kaamsteve@gmail.com"
                   {...field}
-                  className="input pr-20 bg-notif"
+                  className="input pr-20 bg-notif w-[382px]"
                 />
               </FormControl>
               <FormMessage className="text-xs font-normal leading-6 text-red-700" />
@@ -110,10 +111,10 @@ const BusinessForm = () => {
             <FormItem>
               <FormLabel className="text-xs font-light text-placeholder-text">Description</FormLabel>
               <FormControl>
-                <Input
+                <Textarea
                   placeholder="This is my description."
                   {...field}
-                  className="input pr-20 bg-notif"
+                  className="input resize-none  w-[792px] pr-20 bg-notif"
                 />
               </FormControl>
               <FormMessage className="text-xs font-normal leading-6 text-red-700" />

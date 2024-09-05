@@ -21,10 +21,10 @@ const UserDropdownMenu: React.FC<ProfileProps> = ({ handleClick }) => {
         <div className='w-[50px] h-[50px] rounded-full bg-primary flex-center mb-4'>
           <span className='text-white text-[15px] leading-[34.5px] text-centerf font-[500]'>DT</span>
         </div>
-        <div className='flex-center flex-col gap-1'>
+        <div className='flex-center flex-col gap-2'>
           <h3 className="text-base leading-[16.5px] font-bold">Dongmo Talla Adrian</h3>
           <p className="text-sm leading-[10.5px] font-normal">WAGAPAY</p>
-          <span className='text-sm leading-[10.5px] text-center font-normal'>Id: DT123</span>
+          <span className='text-sm leading-[10.5px] text-center font-normal'>ID: DT123</span>
         </div>
       </div>
 
