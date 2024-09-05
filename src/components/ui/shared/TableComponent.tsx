@@ -28,7 +28,7 @@ const TableComponent: React.FC<TableComponentProps> = ({ variant, columns, data 
   };
 
   return (
-    <div className={`${variant === 'big' ? 'mt-4' : ''} w-full max-w-[1010px] overflow-auto`}>
+    <div className={`${variant === 'big' ? 'mt-4' : ''} w-full max-w-[724px] 2xl:max-w-[1010px] overflow-auto`}>
       <table className="w-full min-w-max text-[11px] text-left text-dark3">
         <thead className="text-[11px] leading-[14.36px] text-white bg-dark rounded-[10px] sticky top-0 z-10">
           <tr>
