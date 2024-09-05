@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import UserDropdown from "../ui/shared/UserDropdown";
@@ -8,9 +9,11 @@ import ModeSwitch from "../ui/shared/ModeSwitch";
 
 const Topbar = () => {
   const pathname = usePathname();
+  const [showProfile, setShowProfile] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
 
   return (
-    <nav className="flex-between w-full py-3 px-6 gap-4 relative">
+    <nav className="flex-between w-full py-3 px-6 gap-4">
       <div className="flex-center">
         <div className="mr-1">
           <Image

@@ -28,3 +28,25 @@ export const cardCreateSchema = z.object({
   }),
   email: z.string(),
 });
+
+export const userSchema = z.object({
+  firstName: z.string().min(2, {
+    message: 'Le prénom doit contenir au moins 2 caractères'
+  }),
+  lastName: z.string().min(2, {
+    message: 'Le nom doit contenir au moins 2 caractères'
+  }),
+  email: z.string().email(),
+});
+
+export const businessNameSchema = z.object({
+  name: z.string().min(2, {
+    message: 'Le prénom doit contenir au moins 2 caractères'
+  }),
+  number: z.number(),
+  address: z.string(),
+  email: z.string().email(),
+  description: z.string().min(10, {
+    message: 'La description doit contenir au moins 10 caractères'
+  }),
+});
