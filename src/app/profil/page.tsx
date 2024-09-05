@@ -12,7 +12,7 @@ const Profil = () => {
           <UserForm />
         </div>
 
-        <h2 className="text-sm leading-24 font-semibold mt-16">Détails de l'entreprise</h2>
+        <h2 className="text-sm leading-24 font-semibold mt-16">Détails de entreprise</h2>
         <p className="text-xs font-light text-placeholder-text mt-1">liste en temps réel des dernieres transactions effectuées avec les cartes</p>
 
         <div className="mt-4">
