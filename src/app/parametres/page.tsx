@@ -7,7 +7,7 @@ import { RiArrowRightFill } from 'react-icons/ri';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import JournalTab from '@/components/Tabs/JournalTab';
 
-const paramètres = () => {
+const Paramètres = () => {
   const [selectedOption, setSelectedOption] = useState('tab1');
   const handleChecked = (e: any) => {
     setSelectedOption(e.target.value);
@@ -98,7 +98,7 @@ const paramètres = () => {
             <br /><br />
             Revolut Ltd is registered in England and Wales (No. 08804411), 7 Westferry Circus, Canary Wharf, London, England, E14 4HD and is authorised by the Financial Conduct Authority under the Electronic Money Regulations 2011 (Firm Reference 900562). Revolut Travel Ltd is authorised by the Financial Conduct Authority to undertake insurance distribution activities (FCA No: 780586). Our insurance products are arranged by Revolut Travel Ltd and Revolut Ltd, which is an appointed representative of Revolut Travel Ltd. Revolut’s stock trading products are provided by Revolut Trading Ltd (No. 832790), an appointed representative of Resolution Compliance Ltd, which is authorised and regulated by the Financial Conduct Authority.
             <br /><br />
-            Revolut Ltd is also registered with the Financial Conduct Authority to offer cryptocurrency services under the Money Laundering, Terrorist Financing and Transfer of Funds (Information on the Payer) Regulations 2017. Revolut's commodities service is not regulated by the Financial Conduct Authority.
+            Revolut Ltd is also registered with the Financial Conduct Authority to offer cryptocurrency services under the Money Laundering, Terrorist Financing and Transfer of Funds (Information on the Payer) Regulations 2017. Revolut’s commodities service is not regulated by the Financial Conduct Authority.
             <br /><br />
             You can read more about our Terms and Policies by clicking here.
           </p>
@@ -108,4 +108,4 @@ const paramètres = () => {
   )
 }
 
-export default paramètres;
+export default Paramètres;
