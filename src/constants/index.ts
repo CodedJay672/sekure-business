@@ -40,7 +40,7 @@ export const navLinks: INavLinks[] = [
     icon: icon4,
   },
   {
-    path: "/paramètres",
+    path: "/parametres",
     name: 'Paramètres',
     icon: icon5,
   },

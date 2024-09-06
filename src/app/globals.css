@@ -39,6 +39,28 @@
   .wrapper {
     @apply w-full flex gap-4 ml-4 pb-10 pr-6;
   }
+
+  .tab-header {
+    @apply hidden;
+  }
+
+  .tab-label {
+    @apply text-dark3 text-[11px] leading-[16.5px] font-normal cursor-pointer inline-block py-2 px-2 mr-5 transition-all;
+  }
+
+  .tab-header:checked + .tab-label {
+    @apply border-b-2 border-notif;
+  }
+
+  .tab-content {
+    @apply mt-10 hidden;
+  }
+
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3 {
+    @apply block;
+  }
 }
 
 @layer components {
