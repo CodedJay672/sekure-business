@@ -21,8 +21,8 @@ const RoleSection: React.FC<IRoleSectionData> = ({ role, tagline, data}) => {
       </div>
 
       <div className="w-[592px] grid grid-cols-3 gap-4 mt-5">
-        {data.map((roles) => (
-          <div className="flex gap-4">
+        {data.map((roles, idx) => (
+          <div key={idx} className="flex gap-4">
             <span className="w-[25px] h-[25px] bg-notif rounded-full"></span>
             <p className="text-xs leading-4 font-light text-placeholder-text">{roles}</p>
           </div>
