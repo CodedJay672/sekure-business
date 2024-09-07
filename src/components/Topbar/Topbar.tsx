@@ -1,16 +1,19 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import UserDropdown from "../ui/shared/UserDropdown";
 import Notifications from "../ui/shared/Notifications";
-import ModeSwitch from "../ui/shared/ModeSwitch";
+import Switch from "../ui/shared/switch/Switch";
+import { useState } from "react";
 
 const Topbar = () => {
   const pathname = usePathname();
-  const [showProfile, setShowProfile] = useState(false);
-  const [showNotifications, setShowNotifications] = useState(false);
+  const [isOn, setIsOn] = useState(false);
+
+  const handleToggle = () => {
+    setIsOn(!isOn);
+  }
 
   return (
     <nav className="flex-between w-full py-3 px-6 gap-4">
@@ -36,7 +39,7 @@ const Topbar = () => {
       <div className="flex-between gap-2">
         <UserDropdown fullname="Dongmo Talla Adrian" business="WAGAPAY" />
         <Notifications />
-        <ModeSwitch />
+        <Switch text="Mode test" isOn={isOn} handleToggle={handleToggle} />
       </div>
     </nav>
   )

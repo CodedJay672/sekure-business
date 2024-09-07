@@ -36,6 +36,10 @@
     @apply flex justify-between items-center;
   }
 
+  .flex-end {
+    @apply flex justify-end items-center;
+  }
+
   .wrapper {
     @apply w-full flex gap-4 ml-4 pb-10 pr-6;
   }

@@ -16,7 +16,7 @@ const UserDropdownMenu: React.FC<ProfileProps> = ({ handleClick }) => {
   }
 
   return (
-    <div className="w-64 absolute top-12 right-0 bg-white z-10 shadow-lg rounded-[10px] p-4">
+    <div className="w-64 absolute top-12 right-0 bg-white z-50 shadow-lg rounded-[10px] p-4">
       <div className='flex flex-col justify-center items-center mr-2 mt-6'>
         <div className='w-[50px] h-[50px] rounded-full bg-primary flex-center mb-4'>
           <span className='text-white text-[15px] leading-[34.5px] text-centerf font-[500]'>DT</span>

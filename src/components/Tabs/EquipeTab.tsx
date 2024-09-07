@@ -10,7 +10,7 @@ const EquipeTab = () => {
         <Button
           variant="default"
           type="button"
-          className="text-xs leading-[34.5px] font-semibold text-white bg-primary"
+          className="text-xs leading-[34.5px] font-semibold text-white bg-primary h-[34px]"
         >
           Inviter un membre
         </Button>

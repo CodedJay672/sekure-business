@@ -30,3 +30,9 @@ export interface ITableColumn {
   id: string;
   header: string;
 }
+
+export interface IRoleSectionData {
+  role: string;
+  tagline: string;
+  data: string[];
+}

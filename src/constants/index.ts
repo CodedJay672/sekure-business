@@ -225,3 +225,11 @@ export const smallData: Data[] = [
     date: "Talla oyono Richnel",
   },
 ];
+
+export const AdminData = [
+  "Steve Waga",
+  "Steve Waga",
+  "Steve Waga",
+  "Steve Waga",
+  "Steve Waga",
+]

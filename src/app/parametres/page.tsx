@@ -1,14 +1,24 @@
 "use client";
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Input } from '@/components/ui/input'
 import EquipeTab from '@/components/Tabs/EquipeTab';
 import { RiArrowRightFill } from 'react-icons/ri';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import JournalTab from '@/components/Tabs/JournalTab';
+import Switch from '@/components/ui/shared/switch/Switch';
+import RolesTab from '@/components/Tabs/RolesTab';
+import { IoIosArrowDown } from 'react-icons/io';
 
 const Paramètres = () => {
   const [selectedOption, setSelectedOption] = useState('tab1');
+  
+  const [isSwitchOn, setIsSwitchOn] = useState(false);
+
+  const handleToggle = () => {
+    setIsSwitchOn(!isSwitchOn);
+  };
+
   const handleChecked = (e: any) => {
     setSelectedOption(e.target.value);
   }
@@ -54,8 +64,7 @@ const Paramètres = () => {
         </section>
 
         <section className="tab-content" id="content2">
-          <h2>Content for Tab 2</h2>
-          <p>This is the content for the second tab.</p>
+          <RolesTab />
         </section>
 
         <section className="tab-content" id="content3">
@@ -66,30 +75,35 @@ const Paramètres = () => {
         <div className='flex flex-col gap-3'>
           <div className='w-full py-3 px-[14px] rounded-[10px] bg-white'>
             <div className='flex-between'>
-              <h2 className='text-xs leading-[34.5px] tracking-[-0.5%] font-semibold'>Langue</h2>
+              <h2 className='text-xs flex-1 leading-[34.5px] tracking-[-0.5%] font-semibold'>Langue</h2>
               <p className='text-xs leading-[34.5px] tracking-[-0.5%] font-normal text-placeholder-text'>Francais</p>
+              <IoIosArrowDown size={10} className='ml-10'/>
+
             </div>
             <div className='flex-between mt-2'>
-              <h2 className='text-xs leading-[34.5px] tracking-[-0.5%] font-semibold'>Notifications</h2>
+              <h2 className='text-xs flex-1 leading-[34.5px] tracking-[-0.5%] font-semibold'>Notifications</h2>
               <p className='text-xs leading-[34.5px] tracking-[-0.5%] font-normal text-placeholder-text'>Activées</p>
+              <IoIosArrowDown size={10} className='ml-10'/>
+
             </div>
           </div>
 
           <div className='w-full py-3 px-[14px] rounded-[10px] bg-white'>
             <div className='flex-between'>
               <h2 className='text-xs leading-[34.5px] tracking-[-0.5%] font-semibold'>Termes de confidentialité</h2>
-              <MdOutlineKeyboardArrowRight />
+              <MdOutlineKeyboardArrowRight size={13} />
             </div>
             <div className='flex-between mt-2'>
               <h2 className='text-xs leading-[34.5px] tracking-[-0.5%] font-semibold'>Police d’utilisation</h2>
-              <MdOutlineKeyboardArrowRight />
+              <MdOutlineKeyboardArrowRight size={13} />
             </div>
             <div className='flex-between mt-2'>
               <h2 className='text-xs leading-[34.5px] tracking-[-0.5%] font-semibold'>Site Web</h2>
-              <MdOutlineKeyboardArrowRight />
+              <MdOutlineKeyboardArrowRight size={13} />
             </div>
           </div>
         </div>
+
         <div className='mt-64'>
           <h2 className='text-xs leading-[17px]'>© 2023 Sekure Technologies LLC.<br /> 
           Tous droits réservés </h2>
