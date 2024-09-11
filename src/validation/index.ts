@@ -50,3 +50,9 @@ export const businessNameSchema = z.object({
     message: 'La description doit contenir au moins 10 caractères'
   }),
 });
+
+export const searchSchema = z.object({
+  query: z.string().min(2, {
+    message: 'La recherche doit contenir au moins 2 caractères'
+  }),
+});

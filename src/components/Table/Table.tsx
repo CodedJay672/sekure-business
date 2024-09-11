@@ -22,7 +22,7 @@ const Table: React.FC<TableProps> = ({ heading, variant, columns, data }) => {
           <p className="text-xs leading-4 font-light">liste en temps réel des dernieres transactions effectuées avec les cartes</p>
         </div>
         <div className="w-full flex gap-1">
-          <SearchBar />
+          <SearchBar placeholder="Enter search term..."/>
           <Filter />
           <Pagination />
         </div>

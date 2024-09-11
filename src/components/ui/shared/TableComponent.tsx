@@ -48,8 +48,8 @@ const TableComponent: React.FC<TableComponentProps> = ({ variant, columns, data 
                   {row[column.accessor || column.id] ?? ''}
                 </td>
               ))}
-              <td className="px-2 py-6">
-                <Button variant="default" type="button" className="bg-dark3 text-white text-xs leading-3 tracking-[-0.5%] rounded-full px-5" onClick={() => handleMenuClick(row.no)}>
+              <td className="px-2 py-3">
+                <Button variant="default" type="button" className="bg-dark3 text-white text-xs leading-3 tracking-[-0.5%] rounded-[9px] w-[154px] h-[34px]" onClick={() => handleMenuClick(row.no)}>
                   <PiCirclesFourFill size={20} color="white" className="mr-3"/>
                   Manager
                 </Button>
