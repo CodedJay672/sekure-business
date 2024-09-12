@@ -78,7 +78,7 @@ const UtilisateursDetails = () => {
         <div className="w-full max-w-[843px] bg-white mt-3  px-2 py-3 rounded-[10px] ">
           <h2 className="text-base leading-6 font-semibold">Liste des transactions</h2>
           <div className="w-full flex-between mt-2 gap-2">
-            <SearchBar />
+            <SearchBar placeholder="Enter search term..." />
             <div className="max-w-[108px] h-8 rounded-[5px] bg-notif">
               <span className="text-xs leading-[34.5px] tracking-[-0.5px] text-center font-normal text-placeholder-text px-2">Date de debut</span>
             </div>
