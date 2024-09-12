@@ -5,7 +5,7 @@ import RoleSection from "../ui/shared/RoleSection";
 const RolesTab = () => {
   return (
     <>
-      <div className="w-full flex justify-end">
+      <div className="w-full max-w-[802px] flex justify-end">
         <Button 
           variant="default"
           type="button"
