@@ -31,7 +31,9 @@ const Table: React.FC<TableProps> = ({ heading, variant, columns, data }) => {
           <h1 className="text-xs leading-[34.5px] tracking-[-0.5%] font-bold">Meilleurs utilisateurs payeurs</h1>
         )}
 
-        <TableComponent variant={variant} columns={columns} data={data} />
+        <div className="flex">
+          <TableComponent variant={variant} columns={columns} data={data} />
+        </div>
     </section>
   )
 }

@@ -8,12 +8,12 @@ import React from 'react'
 const Transactions = () => {
   return (
     <section className='wrapper'>
-      <div className='flex-1 flex flex-col gap-4'>
+      <div className='overflow-hidden flex flex-col gap-4'>
         <section className='flex gap-2 w-[80%]'>
           <Card key={0} {...cardDetails[0]} />
           <Card key={1} {...cardDetails[1]} />
         </section>
-        <section className='flex flex-col gap-4'>
+        <section className='w-full'>
           <AdminChart variant='simple' />
         </section>
         <section className='w-full'>
@@ -25,7 +25,7 @@ const Transactions = () => {
           />
         </section>
       </div>
-      <div className='max-w-[300px] flex flex-col gap-[13px]'>
+      <div className='w-[300px] flex flex-col gap-[13px]'>
         <div className='w-full py-3 px-[14px] bg-white overflow-hidden rounded-[10px]'>
           <StatsCard entry={[20, 80]} />
         </div>

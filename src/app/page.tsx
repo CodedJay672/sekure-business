@@ -6,8 +6,8 @@ import { bigTable, cardDetails, data } from "@/constants";
 
 export default function Home() {
   return (
-    <section className="w-full flex justify-between gap-4 pr-6 ml-3 pb-10">
-      <div className="flex-1 flex flex-col gap-4">  
+    <section className="wrapper">
+      <div className="overflow-hidden flex flex-col gap-4">  
         <section className="flex-between gap-2">
           {cardDetails.map((card, idx) => (
             <Card key={idx} {...card} />

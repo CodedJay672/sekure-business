@@ -23,7 +23,7 @@ const Paramètres = () => {
 
   return (
     <section className="wrapper">
-      <div className="w-full flex-1 bg-white rounded-[10px] p-4">
+      <div className="overflow-hidden w-full flex-1 bg-white rounded-[10px] p-4">
         <Input
           type="radio"
           id="tab1"

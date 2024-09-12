@@ -41,7 +41,7 @@
   }
 
   .wrapper {
-    @apply w-full flex gap-4 ml-4 pb-10 pr-6;
+    @apply flex-auto w-[80%] flex gap-4 ml-4 pb-10 pr-6;
   }
 
   .tab-header {

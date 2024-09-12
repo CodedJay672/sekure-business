@@ -4,7 +4,7 @@ import UserForm from "@/components/Forms/UserForm";
 const Profil = () => {
   return (
     <section className="wrapper">
-      <div className="w-full max-w-[1214px] flex flex-col rounded-[10px] bg-white pt-11 pl-10 pb-44">
+      <div className="flex-1 flex flex-col rounded-[10px] bg-white pt-11 pl-10 pb-44">
         <h2 className="text-sm leading-24 font-semibold">Détails personnels</h2>
         <p className="text-xs font-light text-placeholder-text mt-1">liste en temps réel des dernieres transactions effectuées avec les cartes</p>
 
