@@ -28,7 +28,7 @@ const UserDropdownMenu: React.FC<ProfileProps> = ({ handleClick }) => {
         </div>
       </div>
 
-      <Button variant="outline" type='button' className='w-full py-2 text-left text-sm font-semibold text-primary border border-primary rounded-full mt-24 mb-10 bg-white' onClick={handleProfile}>
+      <Button variant="outline" type='button' className='w-full py-[3px] text-left text-sm font-semibold text-primary border border-primary rounded-[8px] mt-4 mb-10 bg-white' onClick={handleProfile}>
         Profil
       </Button>
     </div>

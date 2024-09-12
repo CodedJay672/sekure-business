@@ -29,12 +29,6 @@ const Transactions = () => {
         <div className='w-full py-3 px-[14px] bg-white overflow-hidden rounded-[10px]'>
           <StatsCard entry={[20, 80]} />
         </div>
-        <div className='w-full py-3 px-[14px] bg-white overflow-hidden rounded-[10px]'>
-          <StatsCard entry={[20, 80]} />
-        </div>
-        <div className='w-full py-3 px-[14px] bg-white overflow-hidden rounded-[10px]'>
-          <StatsCard entry={[20, 80]} />
-        </div>
         
         <div className='w-full bg-white rounded-[10px] px-[14px] py-3'>
           <Table variant='small' columns={smallTable} data={smallData} />
