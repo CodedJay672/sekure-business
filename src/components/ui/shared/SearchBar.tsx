@@ -17,7 +17,7 @@ import { searchSchema } from "@/validation";
 import { RiSearchLine } from "react-icons/ri";
 
 const SearchBar = ({ placeholder }: { placeholder: string }) => {
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
   const { replace } = useRouter();
   const pathname = usePathname();
 
@@ -30,17 +30,17 @@ const SearchBar = ({ placeholder }: { placeholder: string }) => {
 
   const onSubmit = async (values: z.infer<typeof searchSchema>) => {
     // get the params from the url
-    const params = new URLSearchParams(searchParams);
-    if (values.query){
-      values.query.length > 2 && params.set('q', values.query);
-    } else {
-      params.delete('q');
-    }
+    // const params = new URLSearchParams(searchParams);
+    // if (values.query){
+    //   values.query.length > 2 && params.set('q', values.query);
+    // } else {
+    //   params.delete('q');
+    // }
 
-    // replace the link in the location bar to take the search query
-    replace(`${pathname}?${params}`);
+    // // replace the link in the location bar to take the search query
+    // replace(`${pathname}?${params}`);
 
-    // reset form field after submitting the form
+    // // reset form field after submitting the form
     form.reset();
   }
 

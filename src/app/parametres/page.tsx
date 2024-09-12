@@ -3,10 +3,8 @@
 import React, { useState } from 'react'
 import { Input } from '@/components/ui/input'
 import EquipeTab from '@/components/Tabs/EquipeTab';
-import { RiArrowRightFill } from 'react-icons/ri';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import JournalTab from '@/components/Tabs/JournalTab';
-import Switch from '@/components/ui/shared/switch/Switch';
 import RolesTab from '@/components/Tabs/RolesTab';
 import { IoIosArrowDown } from 'react-icons/io';
 
