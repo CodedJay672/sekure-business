@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import Topbar from "@/components/Topbar/Topbar";
-import Sidebar from "@/components/Sidebar/Sidebar";
+import "../../app/globals.css";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Topbar />
-        <main className="w-full flex justify-start items-start">
-          <Sidebar />
+        <main className="flex">
           {children}
         </main>
       </body>
