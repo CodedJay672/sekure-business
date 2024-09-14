@@ -1,6 +1,6 @@
-import SignupForm from "@/components/Forms/SignupForm";
+import RegisterBusinessForm from "@/components/Forms/RegisterBusinessForm"
 
-const Signup = () => {
+const page = () => {
   return (
     <>
       <div className="w-full h-full overflow-y-hidden relative md:w-[490px] bg-white bg-no-repeat bg-right-top bg-[url(/assets/images/login-vector.png)]">
@@ -9,11 +9,11 @@ const Signup = () => {
             <span className="w-6 h-6 rounded-full bg-primary"/><span className="w-6 h-6 rounded-full bg-notif"/>
           </div>
           <h1 className="text-[35px] leading-[30px] tracking-[-2px] font-semibold text-primary mb-3">Enregistrer son entreprise</h1>
-          <SignupForm />
+          <RegisterBusinessForm />
         </div>
       </div>
     </>
   )
 }
 
-export default Signup;
+export default page

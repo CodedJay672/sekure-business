@@ -5,12 +5,12 @@ interface Props {
   text: string,
 }
 
-const SignupSidebar:React.FC<Props> = ({ text }) => {
+const RecoverPasswordSidebar:React.FC<Props> = ({ text }) => {
   return (
     <div className="flex-1">
       <div
         className="h-full w-full bg-cover relative bg-no-repeat bg-center"
-        style={{backgroundImage: `url(/assets/images/man-office.png)`}}
+        style={{backgroundImage: `url(/assets/images/recpwd.png)`}}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black z-10" />
         <div className="absolute pl-20 py-12 h-full hidden md:flex justify-between flex-col z-50">
@@ -31,7 +31,7 @@ const SignupSidebar:React.FC<Props> = ({ text }) => {
               {text}
             </p>
 
-            <p className="text-[10px] leading-4 font-light text-white">Ibrahima Adiouf, <span className="font-semibold">CEO AfroBritish</span></p>
+            <p className="text-[10px] leading-4 font-light text-white">Ofemi Bertrand, <span className="font-semibold">CTO Agora Group</span></p>
           </div>
         </div>
       </div>
@@ -39,4 +39,4 @@ const SignupSidebar:React.FC<Props> = ({ text }) => {
   )
 }
 
-export default SignupSidebar
+export default RecoverPasswordSidebar;

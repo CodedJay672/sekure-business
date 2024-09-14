@@ -72,3 +72,32 @@ export const signupSchema = z.object({
   terms_condition: z.boolean().default(false).optional(),
   receive_mail: z.boolean().default(false).optional(),
 });
+
+export const businessFieldSchema = z.object({
+  otp: z.string().min(6, {
+    message: 'La recherche doit contenir au moins 2 caractères'
+  }),
+  terms_condition: z.boolean().default(false).optional(),
+  receive_mail: z.boolean().default(false).optional(),
+});
+
+export const signinSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8, {
+    message: 'Le mot de passe doit contenir au moins 8 caractères'
+  }),
+});
+
+export const recPwdSchema = z.object({
+  email: z.string().email(),
+});
+
+export const OTPSchema = z.object({
+  otp: z.string(),
+});
+
+export const pwdSchema = z.object({
+  pwd: z.string().min(10, {
+    message: 'Le mot de passe doit contenir au moins 10 caractères'
+  }),
+});
