@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../../app/globals.css";
-import Image from "next/image";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,10 +15,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="flex">
+        <main>
           {children}
         </main>
       </body>
