@@ -97,7 +97,7 @@ const SignupForm = () => {
           name="position"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[11px] leading-4 text-black">Poste dans l'entreprise</FormLabel>
+              <FormLabel className="text-[11px] leading-4 text-black">Poste dans l&apos;entreprise</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Comptable"
