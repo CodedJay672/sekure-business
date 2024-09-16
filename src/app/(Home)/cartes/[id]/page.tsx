@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useMemo, useState } from "react";
 import Card from "@/components/Cards/Cards";
 import { Button } from "@/components/ui/button";
 import Active from "@/components/ui/shared/Active";
@@ -9,8 +12,18 @@ import { data, bigTable } from "@/constants";
 import Image from "next/image";
 import { IoCopyOutline } from "react-icons/io5";
 import { RiAddCircleFill } from "react-icons/ri";
+import { Data } from "@/constants/types";
 
 const CardDetails = ({ params } : { params: { id: string } }) => {
+  const [tableData, setTableData] = React.useState<Data[]>(data);
+  const [query, setQuery] = React.useState<string>('');
+
+  const filteredData = useMemo(() => {
+    return tableData.filter((item) => {
+      return item.date.toString().toLowerCase().includes(query.toLowerCase());
+    });
+  }, [query]);
+
   const { id } = params;
 
   const card = data.find((data) => data.no === Number(id));
@@ -73,7 +86,7 @@ const CardDetails = ({ params } : { params: { id: string } }) => {
         <div className="w-full max-w-[843px] bg-white mt-3  px-2 py-3 rounded-[10px] ">
           <h2 className="text-base leading-6 font-semibold">Liste des transactions</h2>
           <div className="w-full flex-between mt-2 gap-2">
-            <SearchBar placeholder="Enter search term..." />
+            <SearchBar placeholder="Enter search term..." setData={setQuery}/>
             <div className="max-w-[108px] h-8 rounded-[5px] bg-notif">
               <span className="text-xs leading-[34.5px] tracking-[-0.5px] text-center font-normal text-placeholder-text px-2">Date de debut</span>
             </div>
@@ -85,7 +98,7 @@ const CardDetails = ({ params } : { params: { id: string } }) => {
               <span className="text-xs leading-[34.5px] tracking-[-0.5px] text-center font-normal text-[#18BC7A]">Filtrer</span>
             </div>
           </div>
-          <TableComponent variant="big" columns={bigTable} data={data} />
+          <TableComponent variant="big" columns={bigTable} data={filteredData} />
         </div>
       </div>
     </section>
