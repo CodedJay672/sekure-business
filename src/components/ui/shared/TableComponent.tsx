@@ -41,21 +41,29 @@ const TableComponent: React.FC<TableComponentProps> = ({ variant, columns, data 
           </tr>
         </thead>
         <tbody>
-          {data.map((row, idx) => (
-            <tr key={idx} className={`bg-white dark:bg-gray-800 ${idx % 2 === 0 ? 'bg-gray-50 dark:bg-gray-900' : ''} text-[11px]`}>
-              {columns.map((column) => (
-                <td className="px-2 py-6 min-w-[70px]" key={`${idx}-${column.id}`}>
-                  {row[column.accessor || column.id] ?? ''}
+          {data.length > 0 ? (
+            data.map((row, idx) => (
+              <tr key={idx} className={`bg-white dark:bg-gray-800 ${idx % 2 === 0 ? 'bg-gray-50 dark:bg-gray-900' : ''} text-[11px]`}>
+                {columns.map((column) => (
+                  <td className="px-2 py-6 min-w-[70px]" key={`${idx}-${column.id}`}>
+                    {row[column.accessor || column.id] ?? ''}
+                  </td>
+                ))}
+                <td className="px-2 py-3">
+                  <Button variant="default" type="button" className="bg-dark3 text-white text-xs leading-3 tracking-[-0.5%] rounded-[9px] w-[154px] h-[34px]" onClick={() => handleMenuClick(row.no)}>
+                    <PiCirclesFourFill size={20} color="white" className="mr-3"/>
+                    Manager
+                  </Button>
                 </td>
-              ))}
-              <td className="px-2 py-3">
-                <Button variant="default" type="button" className="bg-dark3 text-white text-xs leading-3 tracking-[-0.5%] rounded-[9px] w-[154px] h-[34px]" onClick={() => handleMenuClick(row.no)}>
-                  <PiCirclesFourFill size={20} color="white" className="mr-3"/>
-                  Manager
-                </Button>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan={columns.length + 1} className="text-center py-4 text-dark3">
+                No data available
               </td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
     </div>
