@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useMemo, useState } from "react";
 import Card from "@/components/Cards/Cards";
 import { Button } from "@/components/ui/button";
 import Active from "@/components/ui/shared/Active";
@@ -10,6 +13,15 @@ import { RiAddCircleFill } from "react-icons/ri";
 import { RxPinRight } from "react-icons/rx";
 
 const UtilisateursDetails = () => {
+  const [query, setQuery] = useState<string>('');
+
+  const filteredData = useMemo(() => {
+    return data.filter((item) => {
+      return item.date.toString().toLowerCase().includes(query.toLowerCase());
+    });
+  }, [query]);
+
+
   return (
     <section className="wrapper flex gap-4">
       <div className="flex flex-col gap-3 border max-w-[354px]">
@@ -69,16 +81,16 @@ const UtilisateursDetails = () => {
           <TableComponent columns={smallTable} data={smallData} />
         </div>
       </div>
-      <div className="flex-1 w-full max-w-[843px]">
+      <div className="flex-1 max-w-[743px]">
         <div className="w-full flex-between gap-2">
           <Card data1={{ title: "Total paiements", value: "$54200.50" }} data2={{ title: "activées", value: "1437" }} data3={{ title: "suspendues", value: "46" }} />
           <Card data1={{ title: "Total paiements", value: "$54200.50" }} data2={{ title: "activées", value: "1437" }} data3={{ title: "suspendues", value: "46" }} />
           <Card data1={{ title: "Total paiements", value: "$54200.50" }} data2={{ title: "activées", value: "1437" }} data3={{ title: "suspendues", value: "46" }} />
         </div>
-        <div className="w-full max-w-[843px] bg-white mt-3  px-2 py-3 rounded-[10px] ">
+        <div className="w-full max-w-[843px] bg-white mt-3  px-2 py-3 rounded-[10px] overflow-hidden">
           <h2 className="text-base leading-6 font-semibold">Liste des transactions</h2>
           <div className="w-full flex-between mt-2 gap-2">
-            <SearchBar placeholder="Enter search term..." />
+            <SearchBar placeholder="Enter search term..." setData={setQuery} />
             <div className="max-w-[108px] h-8 rounded-[5px] bg-notif">
               <span className="text-xs leading-[34.5px] tracking-[-0.5px] text-center font-normal text-placeholder-text px-2">Date de debut</span>
             </div>
@@ -90,7 +102,7 @@ const UtilisateursDetails = () => {
               <span className="text-xs leading-[34.5px] tracking-[-0.5px] text-center font-normal text-[#18BC7A]">Filtrer</span>
             </div>
           </div>
-          <TableComponent variant="big" columns={bigTable} data={data} />
+          <TableComponent variant="big" columns={bigTable} data={filteredData} />
         </div>
       </div>
     </section>
