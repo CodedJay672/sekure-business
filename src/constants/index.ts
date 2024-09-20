@@ -233,3 +233,43 @@ export const AdminData = [
   "Steve Waga",
   "Steve Waga",
 ]
+
+export const info = [
+  {
+    id: '1',
+    title: 'Notification 1',
+    description: 'This is the description of the notification',
+    date: '12/12/2021',
+  },
+  {
+    id: '2',
+    title: 'Notification 2',
+    description: 'This is the description of the notification',
+    date: '12/12/2021',
+  },
+  {
+    id: '3',
+    title: 'Notification 3',
+    description: 'This is the description of the notification',
+    date: '12/12/2021',
+  },
+  {
+    id: '4',
+    title: 'Notification 4',
+    description: 'This is the description of the notification',
+    date: '12/12/2021',
+  },
+  {
+    id: '5',
+    title: 'Notification 5',
+    description: 'This is the description of the notification',
+    date: '12/12/2021',
+  },
+  {
+    id: '6',
+    title: 'Notification 6',
+    description: 'This is the description of the notification',
+    date: '12/12/2021',
+  },
+]
+

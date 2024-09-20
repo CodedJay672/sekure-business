@@ -1,13 +1,15 @@
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { RiNotification2Line } from 'react-icons/ri';
 import { Button } from "../button";
+import NotificationItem from "./NotificationItem";
+import { NotificationItemProps } from "@/constants/types";
+import { info } from "@/constants";
 
 const Notifications = () => {
   return (
@@ -20,19 +22,25 @@ const Notifications = () => {
           </div>
         </Button>
       </SheetTrigger>
-      <SheetContent side="right">
+      <SheetContent side="right" className="w-[383px] h-[795px]">
         <SheetHeader>
-          <SheetTitle>Notifications</SheetTitle>
-          <div className="w-full md:w-[400px] flex flex-col gap-4">
-            <div className="w-full flex">
-              <div className="w-[90px] h-[20px] bg-primary  rounded-[4px] flex-center">
-                <p className="text-white text-[10px] text-center">
-                  Numero (12)
-                </p>
-              </div>
+          <SheetTitle className="text-base leading-5">Notifications</SheetTitle>
+        </SheetHeader>
+        <div className="w-full md:w-[334px] flex flex-col gap-4 mt-3">
+          <div className="w-full flex">
+            <div className="w-[81px] h-[23px] bg-primary  rounded-[7px] flex-center">
+              <p className="text-white text-[9px] leading-[13.5px] font-medium text-center">
+                Numero (12)
+              </p>
             </div>
           </div>
-        </SheetHeader>
+
+          <div className="w-full flex flex-col gap-3">
+            {info.map((data, idx) => (
+              <NotificationItem info={data} key={idx} />
+            ))}
+          </div>
+        </div>
       </SheetContent>
     </Sheet>
   )

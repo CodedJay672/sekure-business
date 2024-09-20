@@ -36,3 +36,12 @@ export interface IRoleSectionData {
   tagline: string;
   data: string[];
 }
+
+export interface NotificationItemProps {
+  info: {
+    id: string;
+    title: string;
+    description: string;
+    date: string;
+  }
+}

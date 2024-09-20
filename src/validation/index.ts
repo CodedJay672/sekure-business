@@ -101,3 +101,23 @@ export const pwdSchema = z.object({
     message: 'Le mot de passe doit contenir au moins 10 caractères'
   }),
 });
+
+export const filterSchema = z.object({
+  type: z.string({
+    required_error: "Please select an email to display.",
+  }),
+  statut: z.string({
+    required_error: "Please select an email to display.",
+  }),
+  pays: z.string({
+    required_error: "Please select an email to display.",
+  }),
+  montant: z.object({
+    depart: z.string(),
+    fin: z.string(),
+  }),
+  date: z.object({
+    depart: z.string(),
+    fin: z.string(),
+  }),
+});
