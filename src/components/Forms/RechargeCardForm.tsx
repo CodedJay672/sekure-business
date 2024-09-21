@@ -19,6 +19,8 @@ import { Input } from "../ui/input";
 import Currency from "../ui/shared/Currency";
 import DetailsTag from "../ui/shared/DetailsTag";
 import { Button } from "../ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import SuccessAlert from "../Alert/SuccessAlert";
 
 
 const RechargeCardForm = ({ btnText}: { btnText: string }) => {
@@ -81,10 +83,19 @@ const RechargeCardForm = ({ btnText}: { btnText: string }) => {
           )}
         />
 
-        <Button variant="outline" type="submit" className="primary-btn">
-          {btnText} 
-          <ArrowRightIcon size={10} color="#fff" />
-        </Button>
+        <Dialog>
+          <DialogTrigger className="w-[330px]">
+            <Button type="submit" className="primary-btn w-full">
+              <span className="flex-1">
+                {btnText}
+              </span>
+              <ArrowRightIcon size={10} color="#fff" />
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="w-[383px]">
+            <SuccessAlert text="Cette carte a été bloquée avec succès !!" />
+          </DialogContent>
+        </Dialog>
       </form>
     </Form>
   )

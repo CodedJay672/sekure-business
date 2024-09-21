@@ -18,6 +18,9 @@ import { ArrowRightIcon } from "lucide-react";
 import { Input } from "../ui/input";
 import DetailsTag from "../ui/shared/DetailsTag";
 import { Button } from "../ui/button";
+import { Dialog, DialogClose, DialogContent, DialogFooter, DialogTrigger } from "../ui/dialog";
+import LoadingSpinner from "../Alert/Loading";
+import SuccessAlert from "../Alert/SuccessAlert";
 
 
 const CreateCardForm = ({ btnText}: { btnText: string }) => {
@@ -77,12 +80,19 @@ const CreateCardForm = ({ btnText}: { btnText: string }) => {
           <DetailsTag data={{ key: 'Montant debité', value: '51 500 XAF' }} />
         </div>
 
-        <Button variant="default" type="submit" className="primary-btn flex-between w-full">
-          <span className="flex-1 text-center">
-            {btnText} 
-          </span>
-          <ArrowRightIcon size={16} color="#fff" />
-        </Button>
+        <Dialog>
+          <DialogTrigger className="w-full">
+            <Button variant="default" type="submit" className="primary-btn flex-between w-full">
+              <span className="flex-1 text-center">
+                {btnText} 
+              </span>
+              <ArrowRightIcon size={16} color="#fff" />
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="w-[383px]">
+            <SuccessAlert text="Cette carte a été bloquée avec succès !!" />
+          </DialogContent>
+        </Dialog>
       </form>
     </Form>
   )

@@ -8,6 +8,8 @@ import { bigTable, cardDetails, data } from "@/constants"
 import { RiAddCircleFill } from "react-icons/ri"
 import Table from "@/components/Table/Table";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import CreateCardForm from "@/components/Forms/CreateCardForm";
 
 const Cartes = () => {
 
@@ -31,16 +33,27 @@ const Cartes = () => {
           <StatsCard entry={[20, 80]} />
         </div>
         <div className="w-full bg-white rounded-[10px] px-[14px] py-3">
-          <Button
-            type="button"
-            variant="default"
-            className="primary-btn w-full flex-between"
-          >
-            <span className="flex-1 text-center">
-              Créer une carte
-            </span>
-            <RiAddCircleFill size={18} className="fill-white" />
-          </Button>
+          <Dialog>
+            <DialogTrigger className="w-full">
+              <Button
+                type="button"
+                variant="default"
+                className="primary-btn w-full flex-between"
+              >
+                <span className="flex-1 text-center">
+                  Créer une carte
+                </span>
+                <RiAddCircleFill size={18} className="fill-white" />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="w-[383px]">
+              <DialogHeader className="mb-3">
+                <DialogTitle>Créer une carte</DialogTitle>
+                <DialogDescription className="sr-only">Créer une carte</DialogDescription>
+              </DialogHeader>
+              <CreateCardForm btnText="Créer" />
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>

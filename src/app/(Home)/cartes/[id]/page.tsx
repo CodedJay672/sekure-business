@@ -13,6 +13,16 @@ import Image from "next/image";
 import { IoCopyOutline } from "react-icons/io5";
 import { RiAddCircleFill } from "react-icons/ri";
 import { Data } from "@/constants/types";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from "@/components/ui/dialog";
+import CreateCardForm from "@/components/Forms/CreateCardForm";
+import RechargeCardForm from "@/components/Forms/RechargeCardForm";
 
 const CardDetails = ({ params } : { params: { id: string } }) => {
   const [tableData, setTableData] = React.useState<Data[]>(data);
@@ -44,20 +54,42 @@ const CardDetails = ({ params } : { params: { id: string } }) => {
             <span className="text-xs leading-[34.5px] tracking-[-0.5%] font-bold text-dark3 pr-2">$54200.50</span>
           </div>
           <div className="flex-between mt-3 gap-2">
-            <Button variant="default" type="button" className="primary-btn text-xs leading-[34.5px] tracking-[-0.5%]font-normal text-center pr-[3px]">
-              Créer une carte
-              <RiAddCircleFill size={24} className="fill-white ml-4" />
-            </Button>
-            <Button variant="default" type="button" className="primary-btn text-xs leading-[34.5px] tracking-[-0.5%]font-normal text-center pr-[4px]">
-              Recharger une carte
-              <Image
-                src="/assets/images/forward.png"
-                alt="deposit"
-                width={24}
-                height={24}
-                className="object-contain mx-2"
-              />
-            </Button>
+            <Dialog>
+              <DialogTrigger>
+                <Button variant="default" type="button" className="primary-btn text-xs leading-[34.5px] tracking-[-0.5%]font-normal text-center pr-[3px]">
+                  Créer une carte
+                  <RiAddCircleFill size={24} className="fill-white ml-4" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="w-[383px]">
+                <DialogHeader>
+                  <DialogTitle>Créer une carte</DialogTitle>
+                  <DialogDescription className="sr-only">Créer une carte</DialogDescription>
+                </DialogHeader>
+                <CreateCardForm btnText="Créer" />
+              </DialogContent>
+            </Dialog>
+            <Dialog>
+              <DialogTrigger>
+                <Button type="button" className="bg-black text-white text-xs leading-[34.5px] tracking-[-0.5%] font-normal text-center pr-[4px]">
+                  Recharger une carte
+                  <Image
+                    src="/assets/images/forward.png"
+                    alt="deposit"
+                    width={24}
+                    height={24}
+                    className="object-contain mx-2"
+                    />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="w-[383px]">
+                <DialogHeader>
+                  <DialogTitle>Recharger une carte</DialogTitle>
+                  <DialogDescription className="sr-only">Recharger une carte</DialogDescription>
+                </DialogHeader>
+                <RechargeCardForm btnText="Recharger" />
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
         <div className="w-[354px] py-3 px-4 bg-white flex flex-col rounded-[10px]">

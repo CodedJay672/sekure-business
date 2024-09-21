@@ -73,7 +73,7 @@
   }
 
   .alert {
-    @apply bg-background text-dark rounded-lg py-6 px-10 flex-center flex-col gap-3 shadow-md;
+    @apply w-full bg-background text-dark rounded-lg flex-center flex-col gap-3;
   }
 
   .input {
@@ -85,7 +85,7 @@
   }
 
   .labels {
-    @apply text-[10px] text-dark leading-6 font-normal;
+    @apply text-[8px] text-[#242424] leading-6 font-normal;
   }
 
   .select {

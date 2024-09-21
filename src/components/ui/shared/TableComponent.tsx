@@ -1,15 +1,10 @@
 "use client";
 
-import { Data } from "@/constants/types";
 import React from "react";
 import { Button } from '@/components/ui/button';
+import { usePathname, useRouter } from 'next/navigation';
 import { PiCirclesFourFill } from "react-icons/pi";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Data } from "@/constants/types";
 
 interface Column {
   id: string;
@@ -24,6 +19,12 @@ interface TableComponentProps {
 }
 
 const TableComponent: React.FC<TableComponentProps> = ({ variant, columns, data }) => {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleClick = (id: string | number) => {
+    router.push(`${pathname}/${id}`)
+  }
 
   return (
     <div className={`${variant === 'big' ? 'mt-4' : ''} w-full flex-1 overflow-auto`}>
@@ -48,7 +49,11 @@ const TableComponent: React.FC<TableComponentProps> = ({ variant, columns, data 
                   </td>
                 ))}
                 <td className="px-2 py-3">
-                  <Button variant="default" type="button" className="bg-dark3 text-white text-xs leading-3 tracking-[-0.5%] rounded-[9px] w-[154px] h-[34px]">
+                  <Button variant="default"
+                    type="button"
+                    className="bg-dark3 text-white text-xs leading-3 tracking-[-0.5%] rounded-[9px] w-[154px] h-[34px]"
+                    onClick={() => handleClick(row.id)}
+                  >
                     <PiCirclesFourFill size={20} color="white" className="mr-3"/>
                     Manager
                   </Button>
