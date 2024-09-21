@@ -1,6 +1,7 @@
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -26,6 +27,9 @@ const Notifications = () => {
         <SheetHeader>
           <SheetTitle className="text-base leading-5">Notifications</SheetTitle>
         </SheetHeader>
+        <SheetDescription>
+          Vous avez 12 notifications
+        </SheetDescription>
         <div className="w-full md:w-[334px] flex flex-col gap-4 mt-3">
           <div className="w-full flex">
             <div className="w-[81px] h-[23px] bg-primary  rounded-[7px] flex-center">

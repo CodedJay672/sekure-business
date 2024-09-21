@@ -1,30 +1,16 @@
 "use client";
 
-import { useState } from "react";
-import { RiCheckboxCircleFill, RiCloseLine } from "react-icons/ri";
+import { RiCheckboxCircleFill } from "react-icons/ri";
 import { Button } from "../ui/button";
 
 const SuccessAlert = ({ text }: { text: string }) => {
-  const [show, setShow] = useState<Boolean>(true);
-
-  const handleClick = () => {
-    setShow(false);
-  }
-
   return (
     <>
-    {show && (
-      <div className="alert relative">
-        <RiCloseLine
-          size={11.5}
-          className="absolute top-[33.5px] left-[343px] cursor-pointer"
-          onClick={handleClick}
-          />
+      <div className="alert">
         <RiCheckboxCircleFill color="#18BC7A" size={34.66} className="fill-primary" />
-        <p className="font-semibold text-base leading-[19px] text-center">{text}</p>
-        <Button variant="outline" type="button" className="primary-btn">Ok</Button>
+        <p className="w-[250px] font-semibold text-base leading-[19px] text-center">{text}</p>
+        <Button type="button" className="w-[151px] text-dark h-[36px] rounded-[9px] bg-[#EBEBEB]">Ok</Button>
       </div>
-    )}
     </>
   )
 }

@@ -1,6 +1,15 @@
 import Image from "next/image";
-import ButtonIconRight from "../ui/shared/ButtonIconRight";
 import { Button } from "../ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import ConvertFundsForm from "../Forms/ConvertFundsForm";
 
 interface IWalletDetails {
   type: string;
@@ -66,22 +75,35 @@ const Wallet = ({ type, deposit, withdraw }: IWalletDetails) => {
             className="object-contain"
           />
         </Button>
-        <Button
-          variant="default"
-          type="button"
-          className="bg-dark3 text-white flex-1 flex-between w-[154px] px-2"
-        >
-          <span className="text-[12px] leading-[34.5px] tracking-[-0.5%] flex-1">
-            Convertir
-          </span>
-          <Image
-            src="/assets/images/reset.png"
-            alt="deposit"
-            width={24}
-            height={24}
-            className="object-contain"
-          />
-        </Button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button
+              variant="default"
+              type="button"
+              className="bg-dark3 text-white flex-1 flex-between w-[154px] text-[12px] leading-[34.5px] tracking-[-0.5%] px-2"
+            >
+              <span className="flex-1">
+                Convertir
+              </span>
+              <Image
+                src="/assets/images/reset.png"
+                alt="deposit"
+                width={24}
+                height={24}
+                className="object-contain"
+              />
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="w-[383px]">
+            <DialogHeader>
+              <DialogTitle>Convertir des fonds</DialogTitle>
+              <DialogDescription className="sr-only">
+                Voulez-vous vraiment convertir votre solde?
+              </DialogDescription>
+            </DialogHeader>
+            <ConvertFundsForm btnText="Convertir" />
+          </DialogContent>
+        </Dialog>
       </div>
     </article>
   )

@@ -27,7 +27,7 @@ const FilterForm = () => {
   })
 
   function onSubmit(data: z.infer<typeof filterSchema>) {
-    console.log(data);
+    alert(data);
   }
 
   return (
@@ -52,7 +52,7 @@ const FilterForm = () => {
                   <SelectItem value="m@support.com">m@support.com</SelectItem>
                 </SelectContent>
               </Select>
-              <FormMessage />
+              <FormMessage className="text-[10px] font-normal leading-6 text-[#a9a9a9]" />
             </FormItem>
           )}
         />
@@ -76,7 +76,7 @@ const FilterForm = () => {
                   <SelectItem value="m@support.com">m@support.com</SelectItem>
                 </SelectContent>
               </Select>
-              <FormMessage />
+              <FormMessage className="text-[10px] font-normal leading-6 text-[#a9a9a9]" />
             </FormItem>
           )}
         />
@@ -100,7 +100,7 @@ const FilterForm = () => {
                   <SelectItem value="m@support.com">m@support.com</SelectItem>
                 </SelectContent>
               </Select>
-              <FormMessage />
+              <FormMessage className="text-[10px] font-normal leading-6 text-[#a9a9a9]" />
             </FormItem>
           )}
         />
@@ -125,7 +125,7 @@ const FilterForm = () => {
                     <SelectItem value="m@support.com">m@support.com</SelectItem>
                   </SelectContent>
                 </Select>
-                <FormMessage />
+                <FormMessage className="text-[10px] font-normal leading-6 text-[#a9a9a9]" />
                 <Select onValueChange={field.onChange} defaultValue={field.value?.fin}>
                   <FormControl>
                     <SelectTrigger className="w-[306px] h-[45px] bg-[#e9e9e9] text-[10px] font-normal leading-6 text-[#a9a9a9]"
@@ -139,7 +139,7 @@ const FilterForm = () => {
                     <SelectItem value="m@support.com">m@support.com</SelectItem>
                   </SelectContent>
                 </Select>
-                <FormMessage />
+                <FormMessage className="text-[10px] font-normal leading-6 text-[#a9a9a9]" />
               </div>
             </FormItem>
           )}
@@ -163,7 +163,7 @@ const FilterForm = () => {
                     <SelectItem value="m@support.com">m@support.com</SelectItem>
                   </SelectContent>
                 </Select>
-                <FormMessage />
+                <FormMessage className="text-[10px] font-normal leading-6 text-[#a9a9a9]" />
                 <Select onValueChange={field.onChange} defaultValue={field.value?.fin}>
                   <FormControl>
                     <SelectTrigger className="w-[306px] h-[45px] bg-[#e9e9e9] text-[10px] font-normal leading-6 text-[#a9a9a9]">
@@ -176,7 +176,7 @@ const FilterForm = () => {
                     <SelectItem value="m@support.com">m@support.com</SelectItem>
                   </SelectContent>
                 </Select>
-                <FormMessage />
+                <FormMessage className="text-[10px] font-normal leading-6 text-[#a9a9a9]" />
               </div>
             </FormItem>
           )}
@@ -185,7 +185,7 @@ const FilterForm = () => {
           <Button type="submit" className="w-full bg-primary text-white text-[10px] leading-[34.5px] rounded-[9px]">
             Valider le filtre
           </Button>
-          <Button type="button" className="w-full bg-notif text-dark2 text-[10px] leading-[34.5px] rounded-[9px]">
+          <Button type="button" className="w-full bg-notif text-black text-[10px] leading-[34.5px] rounded-[9px]">
             Réinitialiser
           </Button>
         </div>

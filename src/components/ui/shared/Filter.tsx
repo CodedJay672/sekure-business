@@ -1,6 +1,7 @@
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -25,6 +26,9 @@ const Filter = () => {
           <SheetTitle>
             Filtrer
           </SheetTitle>
+          <SheetDescription>
+            Filtrer les transactions par date, montant, type, etc.
+          </SheetDescription>
         </SheetHeader>
         <div className="w-[383px] min-h-max mt-2">
           <FilterForm />

@@ -21,6 +21,18 @@ import DetailsTag from "../ui/shared/DetailsTag";
 import { Button } from "../ui/button";
 
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import Voider from "../ui/shared/Voider";
+
+
 const ConvertFundsForm = ({ btnText}: { btnText: string }) => {
   const form = useForm<z.infer<typeof conversionSchema>>({
     resolver: zodResolver(conversionSchema),
@@ -83,10 +95,29 @@ const ConvertFundsForm = ({ btnText}: { btnText: string }) => {
           <DetailsTag data={{ key: 'Montant debité', value: '51 500 XAF' }} />
         </div>
 
-        <Button variant="outline" type="submit" className="primary-btn">
-          {btnText} 
-          <ArrowRightIcon size={10} color="#fff" />
-        </Button>
+        <Dialog>
+          <DialogTrigger>
+            <Button type="submit" className="primary-btn w-[330px]">
+              <span className="flex-1">
+                {btnText}
+              </span>
+              <ArrowRightIcon size={10} color="#fff" />
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="w-[383px]">
+            <DialogHeader>
+              <DialogTitle>Vaider la transaction</DialogTitle>
+              <DialogDescription className="sr-only">Vaider la transaction</DialogDescription>
+            </DialogHeader>
+            <Voider form={{
+              type: "Recharge de solde utilisateur ",
+              compte: "Orange Money",
+              montant: "5000 XAF",
+              numero: "+237 699887766",
+              total: "5150 FCFA"
+            }}/>
+          </DialogContent>
+        </Dialog>
       </form>
     </Form>
   )
