@@ -1,8 +1,9 @@
-import { Arrow } from "@radix-ui/react-select"
 import { Button } from "../ui/button"
 import { Label } from "../ui/label"
 import AdminAccess from "../ui/shared/AdminAccess"
 import { ArrowRightFromLine } from "lucide-react"
+import { Dialog, DialogTrigger, DialogContent } from "../ui/dialog"
+import LoadingSpinner from "../Alert/Loading"
 
 const CreateAdmin = () => {
   return (
@@ -29,16 +30,23 @@ const CreateAdmin = () => {
       <hr className="border-[1px] border-[#E5E5E5] my-3" />
       <AdminAccess />
 
-      <Button
-        variant="default"
-        type="button"
-        className="flex w-full text-xs leading-[34.5px] tracking-[-0.5%] font-medium text-white bg-primary h-[34px] mt-8 rounded-[9px]"
-      >
-        <span className="flex-1">
-          inviter
-        </span>
-        <ArrowRightFromLine size={12} className="inline-block" />
-      </Button>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button
+            variant="default"
+            type="button"
+            className="flex w-full text-xs leading-[34.5px] tracking-[-0.5%] font-medium text-white bg-primary h-[34px] mt-8 rounded-[9px]"
+            >
+            <span className="flex-1">
+              inviter
+            </span>
+            <ArrowRightFromLine size={12} className="inline-block" />
+          </Button>
+        </DialogTrigger>
+        <DialogContent className="w-[383px]">
+          <LoadingSpinner />
+        </DialogContent>
+      </Dialog>
     </article>
   )
 }
