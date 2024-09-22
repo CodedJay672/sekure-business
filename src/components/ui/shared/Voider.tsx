@@ -16,6 +16,7 @@ interface FormProps {
 
 const Voider = ({ form }: FormProps) => {
   const { type, compte, montant, numero, total } = form;
+
   return (
     <>
       <div className="rounded-[26px] bg-[#F5F5F5] flex flex-col gap-6">

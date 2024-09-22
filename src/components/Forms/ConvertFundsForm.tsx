@@ -25,7 +25,6 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -33,7 +32,7 @@ import {
 import Voider from "../ui/shared/Voider";
 
 
-const ConvertFundsForm = ({ btnText}: { btnText: string }) => {
+const ConvertFundsForm = ({ btnText, handleSubmit }: { btnText: string; handleSubmit: () => void; }) => {
   const form = useForm<z.infer<typeof conversionSchema>>({
     resolver: zodResolver(conversionSchema),
   })
@@ -42,6 +41,7 @@ const ConvertFundsForm = ({ btnText}: { btnText: string }) => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values)
+    handleSubmit();
   }
 
   return (

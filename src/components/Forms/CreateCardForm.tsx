@@ -18,12 +18,16 @@ import { ArrowRightIcon } from "lucide-react";
 import { Input } from "../ui/input";
 import DetailsTag from "../ui/shared/DetailsTag";
 import { Button } from "../ui/button";
-import { Dialog, DialogClose, DialogContent, DialogFooter, DialogTrigger } from "../ui/dialog";
+import { Dialog, DialogContent,  DialogTrigger } from "../ui/dialog";
 import LoadingSpinner from "../Alert/Loading";
 import SuccessAlert from "../Alert/SuccessAlert";
 
 
-const CreateCardForm = ({ btnText}: { btnText: string }) => {
+interface CreateCardFormProps {
+  btnText: string;
+}
+
+const CreateCardForm = (props: CreateCardFormProps) => {
   const form = useForm<z.infer<typeof cardCreateSchema>>({
     resolver: zodResolver(cardCreateSchema),
   })
@@ -83,13 +87,16 @@ const CreateCardForm = ({ btnText}: { btnText: string }) => {
         <Dialog>
           <DialogTrigger className="w-full">
             <Button variant="default" type="submit" className="primary-btn flex-between w-full">
-              <span className="flex-1 text-center">
-                {btnText} 
+              <span className="flex-1 text-center" {...props} >
+                {props.btnText} 
               </span>
               <ArrowRightIcon size={16} color="#fff" />
             </Button>
           </DialogTrigger>
-          <DialogContent className="w-[383px]">
+          <DialogContent
+            className="w-[383px]"
+            aria-describedby="en traitment"
+          >
             <SuccessAlert text="Cette carte a été bloquée avec succès !!" />
           </DialogContent>
         </Dialog>

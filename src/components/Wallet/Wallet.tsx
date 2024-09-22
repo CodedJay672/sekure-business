@@ -1,10 +1,12 @@
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -18,6 +20,13 @@ interface IWalletDetails {
 }
 
 const Wallet = ({ type, deposit, withdraw }: IWalletDetails) => {
+  const [open, setOpen] = useState(false);
+
+  const handleSubmit =() => {
+    console.log('submit');
+    setOpen(false);
+  }
+
   return (
     <article className="w-[304px] py-3 px-[14px] flex flex-col justify-between gap-2 bg-white rounded-[10px]">
       <div className="flex-1 flex-between">
@@ -63,7 +72,7 @@ const Wallet = ({ type, deposit, withdraw }: IWalletDetails) => {
           type="submit"
           variant="default"
           className="primary-btn flex-1 flex-between w-[154px] px-2"
-        >
+          >
           <span className="text-[12px] leading-[34.5px] tracking-[-0.5%] flex-1 text-center">
             Recharger
           </span>
@@ -73,9 +82,9 @@ const Wallet = ({ type, deposit, withdraw }: IWalletDetails) => {
             width={24}
             height={24}
             className="object-contain"
-          />
+            />
         </Button>
-        <Dialog>
+        <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
             <Button
               variant="default"
@@ -101,7 +110,7 @@ const Wallet = ({ type, deposit, withdraw }: IWalletDetails) => {
                 Voulez-vous vraiment convertir votre solde?
               </DialogDescription>
             </DialogHeader>
-            <ConvertFundsForm btnText="Convertir" />
+            <ConvertFundsForm btnText="Convertir" handleSubmit={handleSubmit} />
           </DialogContent>
         </Dialog>
       </div>

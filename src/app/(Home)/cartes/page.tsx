@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react"
 import AdminChart from "@/components/AdminChart/AdminChart"
 import Card from "@/components/Cards/Cards"
 import StatsCard from "@/components/StatsCard/StatsCard"
@@ -8,11 +5,10 @@ import { bigTable, cardDetails, data } from "@/constants"
 import { RiAddCircleFill } from "react-icons/ri"
 import Table from "@/components/Table/Table";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import CreateCardForm from "@/components/Forms/CreateCardForm";
 
 const Cartes = () => {
-
   return (
     <section className="wrapper">
       <div className="overflow-hidden flex flex-col gap-4">
@@ -46,10 +42,9 @@ const Cartes = () => {
                 <RiAddCircleFill size={18} className="fill-white" />
               </Button>
             </DialogTrigger>
-            <DialogContent className="w-[383px]">
+            <DialogContent className="w-[383px]" aria-describedby="Créer une carte">
               <DialogHeader className="mb-3">
                 <DialogTitle>Créer une carte</DialogTitle>
-                <DialogDescription className="sr-only">Créer une carte</DialogDescription>
               </DialogHeader>
               <CreateCardForm btnText="Créer" />
             </DialogContent>
